@@ -1,0 +1,10 @@
+{% if menu %}
+	<ul class="nav">
+	{% for item in items %}
+		<li class="{{ item.classes | join(' ') }} nav__item">
+			<a class="nav__link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			{% include "menu.twig" with {'items': item.children} %}
+		</li>
+{% endfor %}
+	</ul>
+{% endif %}

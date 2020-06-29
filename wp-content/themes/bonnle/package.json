@@ -1,0 +1,42 @@
+{
+  "name": "bonnle",
+  "version": "1.0.0",
+  "description": "The \"_s\" for Timber: a dead-simple theme that you can build from. The primary purpose of this theme is to provide a file structure rather than a framework for markup or styles. Configure your Sass, scripts, and task runners however you would like!",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bonnle",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.2.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-tinypng-compress": "^1.2.5",
+    "node-sass": "^4.13.0",
+    "webpack": "^4.41.2",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "fullpage.js": "^3.0.8",
+    "imports-loader": "^0.8.0",
+    "jquery": "^3.4.1",
+    "popper": "^1.0.1"
+  }
+}

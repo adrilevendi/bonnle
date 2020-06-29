@@ -1,0 +1,83 @@
+.page-home {
+
+
+    section {
+        min-height: 100vh;
+    }
+
+    .graphic-rect {
+        position: relative;
+        &--shape {
+            width: 408px;
+            height: 406px;
+            background: #fd0054;
+            box-shadow: 24px 15px 74px rgba(0, 0, 0, 0.25);
+            transform: rotate(26.33deg);
+        }
+
+        &--image {
+            position: absolute;
+        transform:  scale(0.6);
+        top: -32px;
+        left: -62px;
+        }
+    }
+    #bigCiricleIntro {
+        position: absolute;
+        top: 0;
+    }
+
+    #hero {
+        .graphic-rect {
+            position: relative;
+            &--shape {
+                width: 408px;
+                height: 406px;
+                background: #fd0054;
+                box-shadow: 24px 15px 74px rgba(0, 0, 0, 0.25);
+                transform: rotate(26.33deg);
+            }
+
+            &--image {
+                position: absolute;
+            transform:  scale(0.6);
+            top: -32px;
+            left: -62px;
+            }
+        }
+
+        #qualitiesList {
+
+        }
+    }
+
+    #develop {
+        &:hover {
+            @at-root {
+                .navbar_brand {
+                    img {
+                        display: none;
+                    }
+
+                    #headerLogoDark {
+                        display: block;
+                    }
+                }
+            }
+        }
+        &Rect {
+            margin-top: rem(155);
+        }
+
+        #title {
+            &::after {
+                content: url('../../dist/img/Rectangle-text-bg-pink.svg');
+                position: absolute;
+                right: 33px;
+                top: 43px;
+                z-index: -1;
+
+            }
+        }
+    }
+}

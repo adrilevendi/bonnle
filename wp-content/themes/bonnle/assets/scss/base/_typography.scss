@@ -1,0 +1,68 @@
+// Iconfont
+// @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+//// Fontface
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+body{
+  font-family: 'Lato', sans-serif;
+  color: $brand-black;
+}
+*{
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.normal {
+  font-weight: 400;
+}
+.medium {
+  font-weight: 500;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.xbold {
+  font-weight: 800;
+}
+
+.xxbold {
+  font-weight: 900;
+}
+
+
+.display3 {
+  font-style: normal;
+  font-size: 64px;
+  line-height: 78px;
+ 
+}.display1 {
+  font-weight: 800;
+font-size: 144px;
+line-height: 176px;
+}
+
+
+//Colors
+.gray {
+  color: $brand-gray;
+}
+
+.pink {
+  color: $brand-pink;
+}
+
+.black {
+  color: $brand-black;
+}

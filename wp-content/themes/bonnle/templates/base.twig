@@ -1,0 +1,50 @@
+{% block html_head_container %}
+
+    {% include 'html-header.twig' %}
+    {% block head %}
+    {% endblock %}
+    </head>
+{% endblock %}
+
+<body class="page-{% block body_class %}{% endblock %}" data-template="base.twig">
+
+<header class="header">
+    {% block header %}
+
+        {% include "header.twig" %}
+
+    {% endblock %}
+</header>
+
+<section id="content" role="main" class="content-wrapper">
+    {% if title %}<h1>{{ title }}</h1>{% endif %}
+    <div class="wrapper {{ sidebar_class }}">
+        {% block content %}
+            Sorry, no content
+        {% endblock %}
+    </div>
+    {% if sidebar %}
+        <aside class="layout-sidebar">
+            {{ sidebar }}
+        </aside>
+    {% endif %}
+</section>
+
+{% block footer %}
+    <footer id="footer">
+        {% include 'footer.twig' %}
+    </footer>
+    {{ function('wp_footer') }}
+{% endblock %}
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="{{ site.theme.link }}/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="{{ site.theme.link }}/dist/js/index.min.js"></script>
+
+
+
+</body>
+</html>

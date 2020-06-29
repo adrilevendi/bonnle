@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\static",
+    "\\templates",
+    "\\templates\\pages"
+  ],
+  "SelectedNode": "\\templates\\pages\\home.twig",
+  "PreviewInSolutionExplorer": false
+}

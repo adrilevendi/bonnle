@@ -1,0 +1,11 @@
+{
+    "name": "nooo/sitelink",
+    "require": {
+        "jms/serializer": "^1.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sitelink\\": "includes/"
+        }
+    }
+}

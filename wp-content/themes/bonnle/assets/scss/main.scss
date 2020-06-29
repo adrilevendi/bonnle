@@ -1,0 +1,35 @@
+// VENDORS
+@import "../../node_modules/bootstrap/scss/_functions";
+@import "../../node_modules/bootstrap/scss/mixins/_breakpoints";
+
+@import "_variables.scss";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/_variables";
+
+// BASE
+@import 'base/colors';
+@import 'base/typography';
+// LAYOUT
+@import 'layout/header';
+@import 'layout/footer';
+
+//GENERAL
+@import '_general';
+
+// COMPONENTS
+@import 'components/buttons';
+
+// PAGES
+//@import "pages/_homepage.scss";
+
+// COMPONENTS
+@import 'components/sections/_overlay-menu.scss';
+
+
+
+
+// PAGES
+
+
+@import 'pages/home';
