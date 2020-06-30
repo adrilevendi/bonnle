@@ -11,20 +11,26 @@ jQuery(document).ready(function () {
     // });
     
         console.log($('#content').children('.wrapper')[0]);
-    
-        var slidepage = new slidePage({
-            slideContainer: '.wrapper',
-            slidePages: '.slide-item',
-            page: 1,
-            refresh: true,
-            dragMode: false,
-            useWheel: true,
-            useSwipe: true,
-            useAnimation : true,
+
+        $('#content').children('.wrapper')[0].fullpage({
+            navigation: true,
+            sectionsColors: ['#f2f2f2', '#4BBFC3'],
+            
+        });
+
+        // var slidepage = new slidePage({
+        //     slideContainer: '.wrapper',
+        //     slidePages: '.slide-item',
+        //     page: 1,
+        //     refresh: true,
+        //     dragMode: false,
+        //     useWheel: true,
+        //     useSwipe: true,
+        //     useAnimation : true,
         
-            // Events
-            before: function(origin,direction,target){},
-            after: function(origin,direction,target){},
-         });
+        //     // Events
+        //     before: function(origin,direction,target){},
+        //     after: function(origin,direction,target){},
+        //  });
 });
 
