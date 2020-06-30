@@ -9,10 +9,22 @@ jQuery(document).ready(function () {
     //     $('#menuToggler').toggleClass('x');
     //     $('#headerLogo').toggleClass('bright-7');
     // });
-    console.log($('#content').children('.wrapper')[0]);
     
-
-
+        console.log($('#content').children('.wrapper')[0]);
+    
+        var slidepage = new slidePage({
+            slideContainer: '.wrapper',
+            slidePages: '.slide-item',
+            page: 1,
+            refresh: true,
+            dragMode: false,
+            useWheel: true,
+            useSwipe: true,
+            useAnimation : true,
+        
+            // Events
+            before: function(origin,direction,target){},
+            after: function(origin,direction,target){},
+         });
 });
 
-(function)

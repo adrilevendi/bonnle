@@ -1,6 +1,4 @@
 .page-home {
-
-
     section {
         min-height: 100vh;
     }
@@ -17,9 +15,9 @@
 
         &--image {
             position: absolute;
-        transform:  scale(0.6);
-        top: -32px;
-        left: -62px;
+            transform: scale(0.6);
+            top: -32px;
+            left: -62px;
         }
     }
     #bigCiricleIntro {
@@ -40,18 +38,18 @@
 
             &--image {
                 position: absolute;
-            transform:  scale(0.6);
-            top: -32px;
-            left: -62px;
+                transform: scale(0.6);
+                top: -32px;
+                left: -62px;
             }
         }
 
         #qualitiesList {
-
         }
     }
 
     #develop {
+        position: relative;
         &:hover {
             @at-root {
                 .navbar_brand {
@@ -68,16 +66,35 @@
         &Rect {
             margin-top: rem(155);
         }
+        .graphic-rect {
+            &--shape {
+            }
+
+            &--image {
+                position: absolute;
+                transform: scale(0.6);
+                top: -56px;
+                left: -146px;
+                max-width: 699px;
+            }
+        }
 
         #title {
             &::after {
-                content: url('../../dist/img/Rectangle-text-bg-pink.svg');
+                content: url("../../dist/img/Rectangle-text-bg-pink.svg");
                 position: absolute;
                 right: 33px;
                 top: 43px;
                 z-index: -1;
-
             }
+        }
+
+        &RectDots {
+            position: absolute;
+            
+            left: 477px;
+    bottom: 175px;
+
         }
     }
 }

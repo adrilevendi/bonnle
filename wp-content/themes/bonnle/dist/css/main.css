@@ -4,7 +4,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
 /* line 2, node_modules/bootstrap/scss/_root.scss */
 :root {
   --blue: #007bff;
@@ -10419,15 +10419,25 @@ body {
   font-size: 144px;
   line-height: 176px; }
 
-/* line 58, assets/scss/base/_typography.scss */
+/* line 56, assets/scss/base/_typography.scss */
+.p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 267.4%;
+  /* or 43px */
+  letter-spacing: 0.1em; }
+
+/* line 68, assets/scss/base/_typography.scss */
 .gray {
   color: #FBF9FA; }
 
-/* line 62, assets/scss/base/_typography.scss */
+/* line 72, assets/scss/base/_typography.scss */
 .pink {
   color: #FD0054; }
 
-/* line 66, assets/scss/base/_typography.scss */
+/* line 76, assets/scss/base/_typography.scss */
 .black {
   color: #2B2024; }
 
@@ -10642,14 +10652,14 @@ a.btn {
     margin-left: 1.5625rem;
     margin-right: 1.5625rem; }
 
-/* line 4, assets/scss/pages/_home.scss */
+/* line 2, assets/scss/pages/_home.scss */
 .page-home section {
   min-height: 100vh; }
 
-/* line 8, assets/scss/pages/_home.scss */
+/* line 6, assets/scss/pages/_home.scss */
 .page-home .graphic-rect {
   position: relative; }
-  /* line 10, assets/scss/pages/_home.scss */
+  /* line 8, assets/scss/pages/_home.scss */
   .page-home .graphic-rect--shape {
     width: 408px;
     height: 406px;
@@ -10658,7 +10668,7 @@ a.btn {
             box-shadow: 24px 15px 74px rgba(0, 0, 0, 0.25);
     -webkit-transform: rotate(26.33deg);
             transform: rotate(26.33deg); }
-  /* line 18, assets/scss/pages/_home.scss */
+  /* line 16, assets/scss/pages/_home.scss */
   .page-home .graphic-rect--image {
     position: absolute;
     -webkit-transform: scale(0.6);
@@ -10666,15 +10676,15 @@ a.btn {
     top: -32px;
     left: -62px; }
 
-/* line 25, assets/scss/pages/_home.scss */
+/* line 23, assets/scss/pages/_home.scss */
 .page-home #bigCiricleIntro {
   position: absolute;
   top: 0; }
 
-/* line 31, assets/scss/pages/_home.scss */
+/* line 29, assets/scss/pages/_home.scss */
 .page-home #hero .graphic-rect {
   position: relative; }
-  /* line 33, assets/scss/pages/_home.scss */
+  /* line 31, assets/scss/pages/_home.scss */
   .page-home #hero .graphic-rect--shape {
     width: 408px;
     height: 406px;
@@ -10683,7 +10693,7 @@ a.btn {
             box-shadow: 24px 15px 74px rgba(0, 0, 0, 0.25);
     -webkit-transform: rotate(26.33deg);
             transform: rotate(26.33deg); }
-  /* line 41, assets/scss/pages/_home.scss */
+  /* line 39, assets/scss/pages/_home.scss */
   .page-home #hero .graphic-rect--image {
     position: absolute;
     -webkit-transform: scale(0.6);
@@ -10691,24 +10701,37 @@ a.btn {
     top: -32px;
     left: -62px; }
 
-/* line 58, assets/scss/pages/_home.scss */
-.navbar_brand img {
-  display: none; }
-
-/* line 62, assets/scss/pages/_home.scss */
-.navbar_brand #headerLogoDark {
-  display: block; }
-
-/* line 68, assets/scss/pages/_home.scss */
-.page-home #developRect {
-  margin-top: 9.6875rem; }
-
-/* line 73, assets/scss/pages/_home.scss */
-.page-home #develop #title::after {
-  content: url("../../dist/img/Rectangle-text-bg-pink.svg");
-  position: absolute;
-  right: 33px;
-  top: 43px;
-  z-index: -1; }
+/* line 51, assets/scss/pages/_home.scss */
+.page-home #develop {
+  position: relative; }
+  /* line 56, assets/scss/pages/_home.scss */
+  .navbar_brand img {
+    display: none; }
+  /* line 60, assets/scss/pages/_home.scss */
+  .navbar_brand #headerLogoDark {
+    display: block; }
+  /* line 66, assets/scss/pages/_home.scss */
+  .page-home #developRect {
+    margin-top: 9.6875rem; }
+  /* line 73, assets/scss/pages/_home.scss */
+  .page-home #develop .graphic-rect--image {
+    position: absolute;
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+    top: -56px;
+    left: -146px;
+    max-width: 699px; }
+  /* line 83, assets/scss/pages/_home.scss */
+  .page-home #develop #title::after {
+    content: url("../../dist/img/Rectangle-text-bg-pink.svg");
+    position: absolute;
+    right: 33px;
+    top: 43px;
+    z-index: -1; }
+  /* line 92, assets/scss/pages/_home.scss */
+  .page-home #developRectDots {
+    position: absolute;
+    left: 477px;
+    bottom: 175px; }
 
 /*# sourceMappingURL=main.css.map */
