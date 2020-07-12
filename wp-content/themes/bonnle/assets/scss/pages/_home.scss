@@ -4,6 +4,10 @@
     }
 
     .graphic-rect {
+        display: none;
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
         position: relative;
         &--shape {
             width: 408px;
@@ -23,11 +27,19 @@
     #bigCiricleIntro {
         position: absolute;
         top: 0;
+        display: none;
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
     }
 
     #hero {
         .graphic-rect {
             position: relative;
+            display: none;
+            @include media-breakpoint-up(md) {
+                display: block;
+            }
             &--shape {
                 width: 408px;
                 height: 406px;
@@ -45,6 +57,10 @@
         }
 
         #qualitiesList {
+        }
+
+        @include media-breakpoint-down(sm) {
+            background: $brand-black;
         }
     }
 
@@ -91,10 +107,167 @@
 
         &RectDots {
             position: absolute;
-            
-            left: 477px;
-    bottom: 175px;
+            display: none;
+            @include media-breakpoint-up(md) {
+                display: block;
+            }
 
+            left: 477px;
+            bottom: 175px;
+        }
+    }
+
+    #design {
+        #title {
+            &::after {
+                content: url("../../dist/img/Rectangle-text-bg-pink.svg");
+                position: absolute;
+                right: 33px;
+                top: 43px;
+                z-index: -1;
+            }
+        }
+
+        &Graphic {
+            position: relative;
+            &Rect {
+                position: absolute;
+                width: rem(208);
+                height: rem(451);
+                background: $brand-pink;
+                transform: rotate(-64.6deg);
+                z-index: -3;
+                top: 21rem;
+                left: 9rem;
+            }
+
+            &Circle {
+                width: rem(328);
+                position: absolute;
+                height: rem(328);
+                border-radius: 50%;
+                background: $brand-black;
+                z-index: -3;
+                top: 8.37rem;
+                right: 3rem;
+                top: -8rem;
+                right: 0;
+            }
+
+            &Lines {
+                position: absolute;
+                z-index: -2;
+                width: 100%;
+                height: rem(50);
+                top: -63px;
+                    transform: rotate(45deg);
+                hr {
+                    
+                }
+
+                hr:first-child {
+                    margin-bottom: 30px;
+                    
+                }
+
+                hr:nth-child(2) {
+                    margin-right: -6rem;
+                    max-width: 100%;
+                    margin-top: 4rem;
+                }
+            }
+
+            &Screenshot1 {
+                top: 0;
+                z-index: 0;
+                position: absolute;
+            }
+
+            &Screenshot2 {
+                top: rem(70);
+
+                z-index: 0;
+                position: absolute;
+                right: 1rem;
+            }
+        }
+    }
+
+    #works {
+        .work {
+            display: flex;
+            &__image {
+                border: rem(3) solid $brand-black;
+                img {
+                    max-width: 100%;
+                    @include media-breakpoint-up(md) {
+                        min-height: rem(637);
+                    }
+                }
+            }
+        
+            &__title {
+                margin-top: rem(21);
+                text-align: center;
+            }
+        
+            &__wrapper {
+                margin: auto;
+                @include media-breakpoint-up(md) {
+                    margin: unset;
+                }
+            }
+        }
+
+        
+
+        .graphic-divider {
+            max-height: rem(640);
+            // position: absolute;
+            @include media-breakpoint-up(md) {
+                width: rem(219);
+
+            }
+            display: flex;
+            text-align: center;
+
+            svg {
+                display: none;
+                @include media-breakpoint-up(md) {
+                    display:block;
+                    position: absolute;
+                    z-index: -1;
+                }
+            
+            }
+            &__line {
+                // position: absolute;
+                height: 100%;
+                border-right: rem(1) solid $brand-pink;
+                width: 0;
+                margin: auto;
+            }
+
+            #graphic1 {
+                margin-top: 3rem;
+                margin-left: -7.3rem;
+            }
+            
+            #graphic2 {
+                bottom: 18rem;
+                margin-left: 6.7rem;
+            }
+            
+            #graphic3 {
+                margin-top: 3rem;
+                margin-left: -1.5rem;
+            }
+            
+            #graphic4 {
+                margin-left: 6.9rem;
+                bottom: 3rem;
+            }
+            
         }
     }
 }

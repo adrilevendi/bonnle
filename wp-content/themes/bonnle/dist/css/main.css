@@ -10418,8 +10418,13 @@ body {
   font-weight: 800;
   font-size: 144px;
   line-height: 176px; }
+  @media (max-width: 991.98px) {
+    /* line 50, assets/scss/base/_typography.scss */
+    .display1 {
+      font-size: 5.625rem;
+      line-height: 176px; } }
 
-/* line 56, assets/scss/base/_typography.scss */
+/* line 60, assets/scss/base/_typography.scss */
 .p {
   font-family: Montserrat;
   font-style: normal;
@@ -10429,15 +10434,15 @@ body {
   /* or 43px */
   letter-spacing: 0.1em; }
 
-/* line 68, assets/scss/base/_typography.scss */
+/* line 72, assets/scss/base/_typography.scss */
 .gray {
   color: #FBF9FA; }
 
-/* line 72, assets/scss/base/_typography.scss */
+/* line 76, assets/scss/base/_typography.scss */
 .pink {
   color: #FD0054; }
 
-/* line 76, assets/scss/base/_typography.scss */
+/* line 80, assets/scss/base/_typography.scss */
 .black {
   color: #2B2024; }
 
@@ -10498,6 +10503,10 @@ html {
 /* line 9, assets/scss/_general.scss */
 body {
   font-family: 'Montserrat', 'sans-serif'; }
+
+/* line 13, assets/scss/_general.scss */
+.pink-line {
+  border-top: 0.0625rem solid #FD0054; }
 
 /* line 1, assets/scss/components/_buttons.scss */
 .btn {
@@ -10658,8 +10667,13 @@ a.btn {
 
 /* line 6, assets/scss/pages/_home.scss */
 .page-home .graphic-rect {
+  display: none;
   position: relative; }
-  /* line 8, assets/scss/pages/_home.scss */
+  @media (min-width: 768px) {
+    /* line 6, assets/scss/pages/_home.scss */
+    .page-home .graphic-rect {
+      display: block; } }
+  /* line 12, assets/scss/pages/_home.scss */
   .page-home .graphic-rect--shape {
     width: 408px;
     height: 406px;
@@ -10668,7 +10682,7 @@ a.btn {
             box-shadow: 24px 15px 74px rgba(0, 0, 0, 0.25);
     -webkit-transform: rotate(26.33deg);
             transform: rotate(26.33deg); }
-  /* line 16, assets/scss/pages/_home.scss */
+  /* line 20, assets/scss/pages/_home.scss */
   .page-home .graphic-rect--image {
     position: absolute;
     -webkit-transform: scale(0.6);
@@ -10676,15 +10690,25 @@ a.btn {
     top: -32px;
     left: -62px; }
 
-/* line 23, assets/scss/pages/_home.scss */
+/* line 27, assets/scss/pages/_home.scss */
 .page-home #bigCiricleIntro {
   position: absolute;
-  top: 0; }
+  top: 0;
+  display: none; }
+  @media (min-width: 768px) {
+    /* line 27, assets/scss/pages/_home.scss */
+    .page-home #bigCiricleIntro {
+      display: block; } }
 
-/* line 29, assets/scss/pages/_home.scss */
+/* line 37, assets/scss/pages/_home.scss */
 .page-home #hero .graphic-rect {
-  position: relative; }
-  /* line 31, assets/scss/pages/_home.scss */
+  position: relative;
+  display: none; }
+  @media (min-width: 768px) {
+    /* line 37, assets/scss/pages/_home.scss */
+    .page-home #hero .graphic-rect {
+      display: block; } }
+  /* line 43, assets/scss/pages/_home.scss */
   .page-home #hero .graphic-rect--shape {
     width: 408px;
     height: 406px;
@@ -10693,7 +10717,7 @@ a.btn {
             box-shadow: 24px 15px 74px rgba(0, 0, 0, 0.25);
     -webkit-transform: rotate(26.33deg);
             transform: rotate(26.33deg); }
-  /* line 39, assets/scss/pages/_home.scss */
+  /* line 51, assets/scss/pages/_home.scss */
   .page-home #hero .graphic-rect--image {
     position: absolute;
     -webkit-transform: scale(0.6);
@@ -10701,19 +10725,24 @@ a.btn {
     top: -32px;
     left: -62px; }
 
-/* line 51, assets/scss/pages/_home.scss */
+@media (max-width: 767.98px) {
+  /* line 36, assets/scss/pages/_home.scss */
+  .page-home #hero {
+    background: #2B2024; } }
+
+/* line 67, assets/scss/pages/_home.scss */
 .page-home #develop {
   position: relative; }
-  /* line 56, assets/scss/pages/_home.scss */
+  /* line 72, assets/scss/pages/_home.scss */
   .navbar_brand img {
     display: none; }
-  /* line 60, assets/scss/pages/_home.scss */
+  /* line 76, assets/scss/pages/_home.scss */
   .navbar_brand #headerLogoDark {
     display: block; }
-  /* line 66, assets/scss/pages/_home.scss */
+  /* line 82, assets/scss/pages/_home.scss */
   .page-home #developRect {
     margin-top: 9.6875rem; }
-  /* line 73, assets/scss/pages/_home.scss */
+  /* line 89, assets/scss/pages/_home.scss */
   .page-home #develop .graphic-rect--image {
     position: absolute;
     -webkit-transform: scale(0.6);
@@ -10721,17 +10750,155 @@ a.btn {
     top: -56px;
     left: -146px;
     max-width: 699px; }
-  /* line 83, assets/scss/pages/_home.scss */
+  /* line 99, assets/scss/pages/_home.scss */
   .page-home #develop #title::after {
     content: url("../../dist/img/Rectangle-text-bg-pink.svg");
     position: absolute;
     right: 33px;
     top: 43px;
     z-index: -1; }
-  /* line 92, assets/scss/pages/_home.scss */
+  /* line 108, assets/scss/pages/_home.scss */
   .page-home #developRectDots {
     position: absolute;
+    display: none;
     left: 477px;
     bottom: 175px; }
+    @media (min-width: 768px) {
+      /* line 108, assets/scss/pages/_home.scss */
+      .page-home #developRectDots {
+        display: block; } }
+
+/* line 122, assets/scss/pages/_home.scss */
+.page-home #design #title::after {
+  content: url("../../dist/img/Rectangle-text-bg-pink.svg");
+  position: absolute;
+  right: 33px;
+  top: 43px;
+  z-index: -1; }
+
+/* line 131, assets/scss/pages/_home.scss */
+.page-home #designGraphic {
+  position: relative; }
+  /* line 133, assets/scss/pages/_home.scss */
+  .page-home #designGraphicRect {
+    position: absolute;
+    width: 13rem;
+    height: 28.1875rem;
+    background: #FD0054;
+    -webkit-transform: rotate(-64.6deg);
+            transform: rotate(-64.6deg);
+    z-index: -3;
+    top: 21rem;
+    left: 9rem; }
+  /* line 144, assets/scss/pages/_home.scss */
+  .page-home #designGraphicCircle {
+    width: 20.5rem;
+    position: absolute;
+    height: 20.5rem;
+    border-radius: 50%;
+    background: #2B2024;
+    z-index: -3;
+    top: 8.37rem;
+    right: 3rem;
+    top: -8rem;
+    right: 0; }
+  /* line 157, assets/scss/pages/_home.scss */
+  .page-home #designGraphicLines {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 3.125rem;
+    top: -63px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+    /* line 168, assets/scss/pages/_home.scss */
+    .page-home #designGraphicLines hr:first-child {
+      margin-bottom: 30px; }
+    /* line 173, assets/scss/pages/_home.scss */
+    .page-home #designGraphicLines hr:nth-child(2) {
+      margin-right: -6rem;
+      max-width: 100%;
+      margin-top: 4rem; }
+  /* line 180, assets/scss/pages/_home.scss */
+  .page-home #designGraphicScreenshot1 {
+    top: 0;
+    z-index: 0;
+    position: absolute; }
+  /* line 186, assets/scss/pages/_home.scss */
+  .page-home #designGraphicScreenshot2 {
+    top: 4.375rem;
+    z-index: 0;
+    position: absolute;
+    right: 1rem; }
+
+/* line 197, assets/scss/pages/_home.scss */
+.page-home #works .work {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  /* line 199, assets/scss/pages/_home.scss */
+  .page-home #works .work__image {
+    border: 0.1875rem solid #2B2024; }
+    /* line 201, assets/scss/pages/_home.scss */
+    .page-home #works .work__image img {
+      max-width: 100%; }
+      @media (min-width: 768px) {
+        /* line 201, assets/scss/pages/_home.scss */
+        .page-home #works .work__image img {
+          min-height: 39.8125rem; } }
+  /* line 209, assets/scss/pages/_home.scss */
+  .page-home #works .work__title {
+    margin-top: 1.3125rem;
+    text-align: center; }
+  /* line 214, assets/scss/pages/_home.scss */
+  .page-home #works .work__wrapper {
+    margin: auto; }
+    @media (min-width: 768px) {
+      /* line 214, assets/scss/pages/_home.scss */
+      .page-home #works .work__wrapper {
+        margin: unset; } }
+
+/* line 224, assets/scss/pages/_home.scss */
+.page-home #works .graphic-divider {
+  max-height: 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center; }
+  @media (min-width: 768px) {
+    /* line 224, assets/scss/pages/_home.scss */
+    .page-home #works .graphic-divider {
+      width: 13.6875rem; } }
+  /* line 234, assets/scss/pages/_home.scss */
+  .page-home #works .graphic-divider svg {
+    display: none; }
+    @media (min-width: 768px) {
+      /* line 234, assets/scss/pages/_home.scss */
+      .page-home #works .graphic-divider svg {
+        display: block;
+        position: absolute;
+        z-index: -1; } }
+  /* line 243, assets/scss/pages/_home.scss */
+  .page-home #works .graphic-divider__line {
+    height: 100%;
+    border-right: 0.0625rem solid #FD0054;
+    width: 0;
+    margin: auto; }
+  /* line 251, assets/scss/pages/_home.scss */
+  .page-home #works .graphic-divider #graphic1 {
+    margin-top: 3rem;
+    margin-left: -7.3rem; }
+  /* line 256, assets/scss/pages/_home.scss */
+  .page-home #works .graphic-divider #graphic2 {
+    bottom: 18rem;
+    margin-left: 6.7rem; }
+  /* line 261, assets/scss/pages/_home.scss */
+  .page-home #works .graphic-divider #graphic3 {
+    margin-top: 3rem;
+    margin-left: -1.5rem; }
+  /* line 266, assets/scss/pages/_home.scss */
+  .page-home #works .graphic-divider #graphic4 {
+    margin-left: 6.9rem;
+    bottom: 3rem; }
 
 /*# sourceMappingURL=main.css.map */

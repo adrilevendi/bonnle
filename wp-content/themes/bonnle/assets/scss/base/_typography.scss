@@ -51,6 +51,10 @@ body{
   font-weight: 800;
 font-size: 144px;
 line-height: 176px;
+@include media-breakpoint-down(md) {
+  font-size: rem(90);
+  line-height: 176px;
+}
 }
 
 .p {
