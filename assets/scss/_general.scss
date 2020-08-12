@@ -1,0 +1,62 @@
+html {
+  scroll-behavior: smooth;
+  /******DEBUG*******/
+  // *{
+  //  outline: 2px dashed green;
+  // }
+  // div {
+  //   outline-color: blue;
+  // }
+  // h1,h2,h3,h4,h5,h6,p,span {
+  //   outline-color: red;
+  // }
+
+}
+body {
+  font-family: 'Montserrat', 'sans-serif';
+  overflow-x: hidden;
+}
+
+.pink-line {
+  border-top: 0.0625rem solid $brand-pink;
+}
+
+.bg-pink {
+  background-color: $brand-pink !important;
+}
+
+.bg-black {
+  background-color: $brand-black !important;
+}
+
+.transition {
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  background: black;
+}
+
+.loading-screen {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  background-color: $brand-black;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(0) skewX(0);
+  transform-origin: top left;
+}
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+}

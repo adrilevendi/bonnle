@@ -1,0 +1,187 @@
+header {
+	 padding-bottom: 94px;
+	 @include media-breakpoint-down(md) {
+		background: $brand-black;
+	}
+	.navbar-wrapper {
+		position: fixed;
+		z-index: 6;
+		width: 100%;
+		top: 0;
+		.navbar {
+			padding: rem(33) rem(40);
+			z-index: 6;
+			transition: 0.3s ease;
+			@include media-breakpoint-down(sm) {
+				padding: 2.0625rem 1rem;
+				
+			}
+
+			&__brand {
+				img {
+					@include media-breakpoint-down(sm) {
+						max-width: 109px;
+					}
+				}
+
+				#headerLogoDark {
+					display: none;
+				}
+			}
+
+			.nav {
+				margin-right: 4.4375rem;
+				@media screen and (max-width: 840px) {
+					display: none;
+				}
+				&__item {
+					margin-left: 28px;
+					margin-right: 12px;
+
+					&:first-child {
+						margin-left: 0;
+					}
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+
+				&__link {
+					text-decoration: none;
+					font-weight: 500;
+					font-size: rem(14);
+					color: $brand-black;
+					text-transform: uppercase;
+				}
+			}
+
+			&.active {
+				background: $brand-black;
+				* {
+					color:white
+				}
+			}
+		}
+	}
+
+	#sideMenu {
+		position: fixed;
+		top:0;
+		right:-35%;
+		width: 35%;
+		height: 100%;
+		background: $brand-black;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 4;
+		text-align: center;
+		transition:  .6s cubic-bezier(0.74, 0.43, 0.68, 0.88);
+		&.active {
+			right:0;
+			width:100%;
+		}
+		ul {
+			list-style: none;
+
+			li {
+				
+			}
+			&:hover {
+				li {
+					opacity: 0.3;
+					&:hover {
+					// transform: scale(1);
+						opacity: 1;
+						a {
+							&::after {
+								// transform: scaleX(1);
+								width: 100%;
+							}
+						}
+						
+					}
+				}
+			}
+			li{
+				padding: 1rem 0;
+				transition: opacity 0.2s ease-in-out;
+				$this: &;
+				a{
+					font-size: 5rem;
+					font-weight: bold;
+					color: white;
+					text-decoration: none;
+					text-transform: uppercase;
+					letter-spacing: 5px;
+					position: relative;
+					-webkit-backface-visibility: hidden;
+
+					
+					&::after {
+						width: 0%;
+						height: 4px;
+						background: $brand-pink;
+						position: absolute;
+						bottom: 0;
+						left:0;
+						content: '';
+					overflow: hidden;
+						transition: .6s ease-in-out;
+					}
+				}
+
+				
+			
+				
+			}
+		}
+	}
+
+	#menuToggler {
+		position: fixed;
+		top: 0;
+		cursor: pointer;
+		z-index: 7;
+		height: 40px;
+		width: 40px;
+		&.active {
+			span{ 
+				background: white;
+				&:first-child {
+					transform: rotate(135deg);
+					margin-bottom: -0.402rem;
+				}
+				&:last-child {
+					transform: rotate(-135deg);
+					margin-top: 6px;
+					margin-left: 0;
+				}
+			}
+		}
+
+		&.white {
+			span{ 
+				background: white;
+			}
+		}
+	
+		top: 41px;
+			right: 30px;
+		span {
+			transition: 0.5s ease;
+			display: block;
+			width: 35px;
+			height: 1px;
+			background: $brand-black;
+			
+
+			&:last-child {
+				margin-top: 8px;
+				margin-left: -10px;
+			}
+
+		}
+	}
+}

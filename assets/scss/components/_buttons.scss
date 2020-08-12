@@ -1,0 +1,34 @@
+.btn{
+  text-transform: uppercase;
+  color: $white;
+  border-radius: 0;
+  border: 3px solid $brand-black;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  color: $brand-black;
+  font-family: inherit;
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-primary {
+  color: white !important;
+}
+a.btn {
+  color: $white;
+}
+
+.form-control {
+
+  background-color: #FBFBFB;
+  border: 1px solid #E6E7E8;
+  border-radius: 1px;
+}
+
+.btn-discreet {
+  @include button-variant($white, $white);
+  text-transform: unset;
+}
+

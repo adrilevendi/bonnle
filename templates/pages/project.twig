@@ -1,0 +1,49 @@
+{% extends "base.twig" %}
+
+{% block body_class %}projekt
+{% endblock %}
+
+{% block content %}
+
+<section id="project">
+	<div class="container-fluid">
+                <div id="projectTitle" class="reveal-left"><span>
+				Ana Voltana
+				</span>	</div>
+
+		<div class="row">
+			<div class="col-md-6 offset-md-3 mt-5 pt-5">
+                <div id="shape" class="reveal2"></div>
+				<img src="{{site.theme.link}}/dist/img/black-white-girl-square.jpg" class="reveal2">
+				<p class="p mt-5 pt-md-5 reveal2">
+				Integer ullamcorper congue massa, ultrices maximus elit fringilla id. Suspendisse potenti. Nulla ullamcorper dui nec metus consectetur, id placerat erat lobortis. Integer porttitor volutpat augue, quis ornare quam mollis et. Phasellus ac gravida massa. Nam nec rutrum purus, non efficitur lacus. Nunc lorem nisi, hendrerit sed tortor in, aliquam aliquam dolor. Duis quis accumsan magna.
+                </p>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+{% endblock %}
+
+{% block scripts %}
+	<script>
+	var tl = gsap.timeline();
+// gsap
+// .timeline({ delay: 1 }) // More readable to put it here
+// .add('start') // Use a label to sync screen and content animation
+// .to(loadingScreen, {
+//   duration: 0.5,
+//   scaleY: 0,
+//   skewX: 0,
+//   transformOrigin: 'top left',
+//   ease: 'power1.out'
+// }, 'start')
+// .to(loadingScreen, { duration: .5, scaleY: 1, transformOrigin: 'bottom left'});
+tl.from('#projectTitle',{x:-160, delay:0.2, opacity:0.3, duration:1.2, stagger:0.2});
+tl.from('.reveal2',{y:60, opacity:0, delay:0.5, duration:0.4, stagger:0.3});
+
+
+	</script>
+{% endblock %}

@@ -1,0 +1,28 @@
+<div class="navbar-wrapper">
+	<nav class="navbar">
+		<div class="navbar__brand">
+			<a href="{{ site.link }}">
+				{% if post.slug == 'home'%}
+					<img id="headerLogo" src="{{ site.theme.link }}/assets/images/vectors/bonnle-logo-light.svg" alt="bonnle-logo">
+				{% else %}
+					<img id="headerLogo" src="{{ site.theme.link }}/assets/images/vectors/bonnle-logo-dark.svg" alt="bonnle-logo-dark">
+				{% endif %}
+			</a>
+		</div>
+		{% include "menu.twig" with {'items': menu.get_items} %}
+	</nav>
+</div>
+<div id="menuToggler">
+<span></span>
+<span></span>
+
+</div>
+<div id="sideMenu">
+	<div class="wrapper">
+		<ul>
+			<li id="menuItem1"><a href="{{site.link}}">Kreu</a></li>
+			<li id="menuItem2"><a href="{{site.link}}/projekt">projekt</a></li>
+			<li id="menuItem3"><a href="{{site.link}}/kontakt">Kontakt</a></li>
+		</ul>
+	</div>
+</div>
