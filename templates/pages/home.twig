@@ -12,7 +12,7 @@
 			<div class="container-fluid">
 				<div class="row ">
 					<div class="col-md-6 pt-4 mt-2 offset-md-1">
-						<h1 class="display3 gray normal">Ne zhvillojmë</h1>
+						<h1 class="display3 gray normal" id="introTitle">Ne zhvillojmë</h1>
 					</div>
 					<div class="col-md-4 offset-md-1">
 						<img src="{{site.theme.link}}/dist/img/paralel-lines-pink.svg">
@@ -96,7 +96,7 @@
 		</section>
 
 		<section id="works">
-			<div class="container-fluid">
+			<div class="container-fluid pt-4 pt-md-0 mt-5 mt-md-0">
 				<div class="row">
 					<div class="col-md-12 d-md-flex justify-content-between">
 						<div class="work text-md-left text-center">
@@ -231,6 +231,6 @@
 
 {% block scripts %}
 	<script>
-	gsap.from('.reveal',{y:60, opacity:0, delay:0.1, duration:0.4, stagger:0.2});
+	// gsap.from('.reveal',{y:60, opacity:0, delay:0.1, duration:0.4, stagger:0.2});
 	</script>
 {% endblock %}

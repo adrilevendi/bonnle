@@ -34,6 +34,13 @@
     }
 
     #hero {
+
+        #introTitle {
+            @include media-breakpoint-down(sm) {
+                font-size: 3rem;
+                font-weight: 600;
+            }
+        }
         .graphic-rect {
             position: relative;
             display: none;
@@ -60,6 +67,10 @@
             h3 {
                 @include media-breakpoint-down(md) {
                     color: $white;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    font-size: 3rem;
                 }
             }
         }
@@ -202,18 +213,24 @@
     }
 
     #works {
+        
         .work {
             display: flex;
-            
+            @include media-breakpoint-down(md) {
+                margin-bottom: 4rem;
+            }
             &__image {
                 overflow: hidden;
                 border: rem(3) solid $brand-black;
                 img {
                     transition: .7s ease-in-out;
                     max-width: 100%;
+                    height: rem(450);
                     @include media-breakpoint-up(md) {
-                        min-height: rem(637);
+                        height: rem(637);
                     }
+
+                    
                 }
             }
         
@@ -350,6 +367,9 @@
             font-size: 5rem;
             text-transform: lowercase;
             letter-spacing: 2px;
+            @include media-breakpoint-down(sm) {
+                font-size: 3rem;
+            }
         }
         .btn-smart{
             display: flex;

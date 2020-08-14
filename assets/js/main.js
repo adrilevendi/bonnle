@@ -140,7 +140,11 @@ jQuery(document).ready(function () {
   });
   
 
+  $('#sideMenu li').click(() => {
+    $('#sideMenu').removeClass('active');
+    $('#menuToggler').removeClass('active');
 
+  });
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -238,7 +242,7 @@ jQuery(document).ready(function () {
     // TweenMax.to(this, 0.3, { scale: 1.3 });
   });
   $('.work__wrapper').mousemove(function (e) {
-    parallaxWork(e, '.work__image', this, 40);
+    // parallaxWork(e, '.work__image', this, 40);
   });
 
 

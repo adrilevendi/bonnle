@@ -78,9 +78,11 @@ header {
 		z-index: 4;
 		text-align: center;
 		transition:  .6s cubic-bezier(0.74, 0.43, 0.68, 0.88);
+		visibility: hidden;
 		&.active {
 			right:0;
 			width:100%;
+			visibility: visible;
 		}
 		ul {
 			list-style: none;
@@ -110,6 +112,9 @@ header {
 				$this: &;
 				a{
 					font-size: 5rem;
+					@include media-breakpoint-down(sm) {
+						font-size: 2.5rem;
+					}
 					font-weight: bold;
 					color: white;
 					text-decoration: none;
