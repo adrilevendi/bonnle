@@ -10526,29 +10526,31 @@ header {
     z-index: 4;
     text-align: center;
     -webkit-transition: 0.6s cubic-bezier(0.74, 0.43, 0.68, 0.88);
-    transition: 0.6s cubic-bezier(0.74, 0.43, 0.68, 0.88); }
-    /* line 81, assets/scss/layout/_header.scss */
+    transition: 0.6s cubic-bezier(0.74, 0.43, 0.68, 0.88);
+    visibility: hidden; }
+    /* line 82, assets/scss/layout/_header.scss */
     header #sideMenu.active {
       right: 0;
-      width: 100%; }
-    /* line 85, assets/scss/layout/_header.scss */
+      width: 100%;
+      visibility: visible; }
+    /* line 87, assets/scss/layout/_header.scss */
     header #sideMenu ul {
       list-style: none; }
-      /* line 92, assets/scss/layout/_header.scss */
+      /* line 94, assets/scss/layout/_header.scss */
       header #sideMenu ul:hover li {
         opacity: 0.3; }
-        /* line 94, assets/scss/layout/_header.scss */
+        /* line 96, assets/scss/layout/_header.scss */
         header #sideMenu ul:hover li:hover {
           opacity: 1; }
-          /* line 98, assets/scss/layout/_header.scss */
+          /* line 100, assets/scss/layout/_header.scss */
           header #sideMenu ul:hover li:hover a::after {
             width: 100%; }
-      /* line 107, assets/scss/layout/_header.scss */
+      /* line 109, assets/scss/layout/_header.scss */
       header #sideMenu ul li {
         padding: 1rem 0;
         -webkit-transition: opacity 0.2s ease-in-out;
         transition: opacity 0.2s ease-in-out; }
-        /* line 111, assets/scss/layout/_header.scss */
+        /* line 113, assets/scss/layout/_header.scss */
         header #sideMenu ul li a {
           font-size: 5rem;
           font-weight: bold;
@@ -10558,7 +10560,11 @@ header {
           letter-spacing: 5px;
           position: relative;
           -webkit-backface-visibility: hidden; }
-          /* line 122, assets/scss/layout/_header.scss */
+          @media (max-width: 767.98px) {
+            /* line 113, assets/scss/layout/_header.scss */
+            header #sideMenu ul li a {
+              font-size: 2.5rem; } }
+          /* line 127, assets/scss/layout/_header.scss */
           header #sideMenu ul li a::after {
             width: 0%;
             height: 4px;
@@ -10570,7 +10576,7 @@ header {
             overflow: hidden;
             -webkit-transition: .6s ease-in-out;
             transition: .6s ease-in-out; }
-  /* line 142, assets/scss/layout/_header.scss */
+  /* line 147, assets/scss/layout/_header.scss */
   header #menuToggler {
     position: fixed;
     top: 0;
@@ -10580,24 +10586,24 @@ header {
     width: 40px;
     top: 41px;
     right: 30px; }
-    /* line 150, assets/scss/layout/_header.scss */
+    /* line 155, assets/scss/layout/_header.scss */
     header #menuToggler.active span {
       background: white; }
-      /* line 152, assets/scss/layout/_header.scss */
+      /* line 157, assets/scss/layout/_header.scss */
       header #menuToggler.active span:first-child {
         -webkit-transform: rotate(135deg);
                 transform: rotate(135deg);
         margin-bottom: -0.402rem; }
-      /* line 156, assets/scss/layout/_header.scss */
+      /* line 161, assets/scss/layout/_header.scss */
       header #menuToggler.active span:last-child {
         -webkit-transform: rotate(-135deg);
                 transform: rotate(-135deg);
         margin-top: 6px;
         margin-left: 0; }
-    /* line 165, assets/scss/layout/_header.scss */
+    /* line 170, assets/scss/layout/_header.scss */
     header #menuToggler.white span {
       background: white; }
-    /* line 172, assets/scss/layout/_header.scss */
+    /* line 177, assets/scss/layout/_header.scss */
     header #menuToggler span {
       -webkit-transition: 0.5s ease;
       transition: 0.5s ease;
@@ -10605,7 +10611,7 @@ header {
       width: 35px;
       height: 1px;
       background: #2B2024; }
-      /* line 180, assets/scss/layout/_header.scss */
+      /* line 185, assets/scss/layout/_header.scss */
       header #menuToggler span:last-child {
         margin-top: 8px;
         margin-left: -10px; }
@@ -10614,6 +10620,15 @@ header {
 html {
   scroll-behavior: smooth;
   /******DEBUG*******/ }
+  /* line 4, assets/scss/_general.scss */
+  html * {
+    outline: 2px dashed green; }
+  /* line 7, assets/scss/_general.scss */
+  html div {
+    outline-color: blue; }
+  /* line 10, assets/scss/_general.scss */
+  html h1, html h2, html h3, html h4, html h5, html h6, html p, html span {
+    outline-color: red; }
 
 /* line 15, assets/scss/_general.scss */
 body {
@@ -10769,15 +10784,21 @@ a.btn {
     .page-home #bigCiricleIntro {
       display: block; } }
 
-/* line 37, assets/scss/pages/_home.scss */
+@media (max-width: 767.98px) {
+  /* line 38, assets/scss/pages/_home.scss */
+  .page-home #hero #introTitle {
+    font-size: 3rem;
+    font-weight: 600; } }
+
+/* line 44, assets/scss/pages/_home.scss */
 .page-home #hero .graphic-rect {
   position: relative;
   display: none; }
   @media (min-width: 768px) {
-    /* line 37, assets/scss/pages/_home.scss */
+    /* line 44, assets/scss/pages/_home.scss */
     .page-home #hero .graphic-rect {
       display: block; } }
-  /* line 43, assets/scss/pages/_home.scss */
+  /* line 50, assets/scss/pages/_home.scss */
   .page-home #hero .graphic-rect--shape {
     width: 408px;
     height: 406px;
@@ -10786,7 +10807,7 @@ a.btn {
             box-shadow: 24px 15px 74px rgba(0, 0, 0, 0.25);
     -webkit-transform: rotate(26.33deg);
             transform: rotate(26.33deg); }
-  /* line 51, assets/scss/pages/_home.scss */
+  /* line 58, assets/scss/pages/_home.scss */
   .page-home #hero .graphic-rect--image {
     position: absolute;
     -webkit-transform: scale(0.6);
@@ -10795,28 +10816,33 @@ a.btn {
     left: -62px; }
 
 @media (max-width: 991.98px) {
-  /* line 60, assets/scss/pages/_home.scss */
+  /* line 67, assets/scss/pages/_home.scss */
   .page-home #hero #qualitiesList h3 {
     color: #fff; } }
+
+@media (max-width: 767.98px) {
+  /* line 67, assets/scss/pages/_home.scss */
+  .page-home #hero #qualitiesList h3 {
+    font-size: 3rem; } }
 
 @media (max-width: 767.98px) {
   /* line 36, assets/scss/pages/_home.scss */
   .page-home #hero {
     background: #2B2024; } }
 
-/* line 72, assets/scss/pages/_home.scss */
+/* line 83, assets/scss/pages/_home.scss */
 .page-home #develop {
   position: relative; }
-  /* line 77, assets/scss/pages/_home.scss */
+  /* line 88, assets/scss/pages/_home.scss */
   .navbar_brand img {
     display: none; }
-  /* line 81, assets/scss/pages/_home.scss */
+  /* line 92, assets/scss/pages/_home.scss */
   .navbar_brand #headerLogoDark {
     display: block; }
-  /* line 87, assets/scss/pages/_home.scss */
+  /* line 98, assets/scss/pages/_home.scss */
   .page-home #developRect {
     margin-top: 9.6875rem; }
-  /* line 94, assets/scss/pages/_home.scss */
+  /* line 105, assets/scss/pages/_home.scss */
   .page-home #develop .graphic-rect--image {
     position: absolute;
     -webkit-transform: scale(0.6);
@@ -10824,25 +10850,25 @@ a.btn {
     top: -56px;
     left: -146px;
     max-width: 699px; }
-  /* line 104, assets/scss/pages/_home.scss */
+  /* line 115, assets/scss/pages/_home.scss */
   .page-home #develop #title::after {
     content: url("../../dist/img/Rectangle-text-bg-pink.svg");
     position: absolute;
     right: 33px;
     top: 43px;
     z-index: -1; }
-  /* line 113, assets/scss/pages/_home.scss */
+  /* line 124, assets/scss/pages/_home.scss */
   .page-home #developRectDots {
     position: absolute;
     display: none;
     left: 477px;
     bottom: 175px; }
     @media (min-width: 768px) {
-      /* line 113, assets/scss/pages/_home.scss */
+      /* line 124, assets/scss/pages/_home.scss */
       .page-home #developRectDots {
         display: block; } }
 
-/* line 127, assets/scss/pages/_home.scss */
+/* line 138, assets/scss/pages/_home.scss */
 .page-home #design #title::after {
   content: url("../../dist/img/Rectangle-text-bg-pink.svg");
   position: absolute;
@@ -10850,14 +10876,14 @@ a.btn {
   top: 43px;
   z-index: -1; }
 
-/* line 136, assets/scss/pages/_home.scss */
+/* line 147, assets/scss/pages/_home.scss */
 .page-home #designGraphic {
   position: relative; }
   @media (max-width: 991.98px) {
-    /* line 136, assets/scss/pages/_home.scss */
+    /* line 147, assets/scss/pages/_home.scss */
     .page-home #designGraphic {
       display: none; } }
-  /* line 141, assets/scss/pages/_home.scss */
+  /* line 152, assets/scss/pages/_home.scss */
   .page-home #designGraphicRect {
     position: absolute;
     width: 13rem;
@@ -10868,7 +10894,7 @@ a.btn {
     z-index: -3;
     top: 21rem;
     left: 9rem; }
-  /* line 152, assets/scss/pages/_home.scss */
+  /* line 163, assets/scss/pages/_home.scss */
   .page-home #designGraphicCircle {
     width: 20.5rem;
     position: absolute;
@@ -10880,7 +10906,7 @@ a.btn {
     right: 3rem;
     top: -8rem;
     right: 0; }
-  /* line 165, assets/scss/pages/_home.scss */
+  /* line 176, assets/scss/pages/_home.scss */
   .page-home #designGraphicLines {
     position: absolute;
     z-index: -2;
@@ -10889,57 +10915,62 @@ a.btn {
     top: -63px;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg); }
-    /* line 176, assets/scss/pages/_home.scss */
+    /* line 187, assets/scss/pages/_home.scss */
     .page-home #designGraphicLines hr:first-child {
       margin-bottom: 30px; }
-    /* line 181, assets/scss/pages/_home.scss */
+    /* line 192, assets/scss/pages/_home.scss */
     .page-home #designGraphicLines hr:nth-child(2) {
       margin-right: -6rem;
       max-width: 100%;
       margin-top: 4rem; }
-  /* line 188, assets/scss/pages/_home.scss */
+  /* line 199, assets/scss/pages/_home.scss */
   .page-home #designGraphicScreenshot1 {
     top: 0;
     z-index: 0;
     position: absolute; }
-  /* line 194, assets/scss/pages/_home.scss */
+  /* line 205, assets/scss/pages/_home.scss */
   .page-home #designGraphicScreenshot2 {
     top: 4.375rem;
     z-index: 0;
     position: absolute;
     right: 1rem; }
 
-/* line 205, assets/scss/pages/_home.scss */
+/* line 217, assets/scss/pages/_home.scss */
 .page-home #works .work {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
-  /* line 208, assets/scss/pages/_home.scss */
+  @media (max-width: 991.98px) {
+    /* line 217, assets/scss/pages/_home.scss */
+    .page-home #works .work {
+      margin-bottom: 4rem; } }
+  /* line 222, assets/scss/pages/_home.scss */
   .page-home #works .work__image {
     overflow: hidden;
     border: 0.1875rem solid #2B2024; }
-    /* line 211, assets/scss/pages/_home.scss */
+    /* line 225, assets/scss/pages/_home.scss */
     .page-home #works .work__image img {
       -webkit-transition: .7s ease-in-out;
       transition: .7s ease-in-out;
-      max-width: 100%; }
+      max-width: 100%;
+      height: 28.125rem; }
       @media (min-width: 768px) {
-        /* line 211, assets/scss/pages/_home.scss */
+        /* line 225, assets/scss/pages/_home.scss */
         .page-home #works .work__image img {
-          min-height: 39.8125rem; } }
-  /* line 220, assets/scss/pages/_home.scss */
+          height: 39.8125rem; } }
+  /* line 237, assets/scss/pages/_home.scss */
   .page-home #works .work__title {
     margin-top: 1.3125rem;
     text-align: center; }
-    /* line 223, assets/scss/pages/_home.scss */
+    /* line 240, assets/scss/pages/_home.scss */
     .page-home #works .work__title a {
       text-decoration: none; }
-      /* line 225, assets/scss/pages/_home.scss */
+      /* line 242, assets/scss/pages/_home.scss */
       .page-home #works .work__title a h5 {
         position: relative;
         display: inline-block;
         padding-bottom: 0.4rem; }
-        /* line 229, assets/scss/pages/_home.scss */
+        /* line 246, assets/scss/pages/_home.scss */
         .page-home #works .work__title a h5::after {
           width: 0%;
           height: 4px;
@@ -10951,25 +10982,25 @@ a.btn {
           overflow: hidden;
           -webkit-transition: .6s ease-in-out;
           transition: .6s ease-in-out; }
-  /* line 247, assets/scss/pages/_home.scss */
+  /* line 264, assets/scss/pages/_home.scss */
   .page-home #works .work__wrapper {
     margin: auto; }
     @media (min-width: 768px) {
-      /* line 247, assets/scss/pages/_home.scss */
+      /* line 264, assets/scss/pages/_home.scss */
       .page-home #works .work__wrapper {
         margin: unset; } }
-    /* line 253, assets/scss/pages/_home.scss */
+    /* line 270, assets/scss/pages/_home.scss */
     .page-home #works .work__wrapper:hover a {
       text-decoration: none; }
-      /* line 256, assets/scss/pages/_home.scss */
+      /* line 273, assets/scss/pages/_home.scss */
       .page-home #works .work__wrapper:hover a h5::after {
         width: 100%; }
-    /* line 264, assets/scss/pages/_home.scss */
+    /* line 281, assets/scss/pages/_home.scss */
     .page-home #works .work__wrapper:hover img {
       -webkit-transform: scale(1.05);
               transform: scale(1.05); }
 
-/* line 273, assets/scss/pages/_home.scss */
+/* line 290, assets/scss/pages/_home.scss */
 .page-home #works .graphic-divider {
   max-height: 40rem;
   display: -webkit-box;
@@ -10977,39 +11008,39 @@ a.btn {
   display: flex;
   text-align: center; }
   @media (min-width: 768px) {
-    /* line 273, assets/scss/pages/_home.scss */
+    /* line 290, assets/scss/pages/_home.scss */
     .page-home #works .graphic-divider {
       width: 13.6875rem; } }
-  /* line 283, assets/scss/pages/_home.scss */
+  /* line 300, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider svg {
     display: none; }
     @media (min-width: 768px) {
-      /* line 283, assets/scss/pages/_home.scss */
+      /* line 300, assets/scss/pages/_home.scss */
       .page-home #works .graphic-divider svg {
         display: block;
         position: absolute;
         z-index: -1; } }
-  /* line 292, assets/scss/pages/_home.scss */
+  /* line 309, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider__line {
     height: 100%;
     border-right: 0.0625rem solid #FD0054;
     width: 0;
     margin: auto; }
-  /* line 300, assets/scss/pages/_home.scss */
+  /* line 317, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider #graphic1 {
     margin-top: 3rem;
     margin-left: -7.3rem;
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite; }
-  /* line 308, assets/scss/pages/_home.scss */
+  /* line 325, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider #graphic2 {
     bottom: 18rem;
     margin-left: 6.7rem; }
-  /* line 313, assets/scss/pages/_home.scss */
+  /* line 330, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider #graphic3 {
     margin-top: 3rem;
     margin-left: -1.5rem; }
-  /* line 318, assets/scss/pages/_home.scss */
+  /* line 335, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider #graphic4 {
     margin-left: 6.9rem;
     bottom: 3rem; }
@@ -11038,13 +11069,17 @@ a.btn {
   to {
     margin-top: 3rem; } }
 
-/* line 349, assets/scss/pages/_home.scss */
+/* line 366, assets/scss/pages/_home.scss */
 .page-home #cta h2 {
   font-size: 5rem;
   text-transform: lowercase;
   letter-spacing: 2px; }
+  @media (max-width: 767.98px) {
+    /* line 366, assets/scss/pages/_home.scss */
+    .page-home #cta h2 {
+      font-size: 3rem; } }
 
-/* line 354, assets/scss/pages/_home.scss */
+/* line 374, assets/scss/pages/_home.scss */
 .page-home #cta .btn-smart {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11059,18 +11094,18 @@ a.btn {
       -ms-flex-align: center;
           align-items: center;
   margin: auto; }
-  /* line 363, assets/scss/pages/_home.scss */
+  /* line 383, assets/scss/pages/_home.scss */
   .page-home #cta .btn-smart__link {
     display: contents;
     text-decoration: none; }
-  /* line 368, assets/scss/pages/_home.scss */
+  /* line 388, assets/scss/pages/_home.scss */
   .page-home #cta .btn-smart__rect {
     position: absolute;
     height: 50px;
     width: 250px;
     border: solid 3px #2B2024;
     border-radius: 0; }
-  /* line 377, assets/scss/pages/_home.scss */
+  /* line 397, assets/scss/pages/_home.scss */
   .page-home #cta .btn-smart__button {
     letter-spacing: 2px; }
 
