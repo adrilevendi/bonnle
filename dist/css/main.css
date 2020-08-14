@@ -10620,15 +10620,6 @@ header {
 html {
   scroll-behavior: smooth;
   /******DEBUG*******/ }
-  /* line 4, assets/scss/_general.scss */
-  html * {
-    outline: 2px dashed green; }
-  /* line 7, assets/scss/_general.scss */
-  html div {
-    outline-color: blue; }
-  /* line 10, assets/scss/_general.scss */
-  html h1, html h2, html h3, html h4, html h5, html h6, html p, html span {
-    outline-color: red; }
 
 /* line 15, assets/scss/_general.scss */
 body {
