@@ -10473,40 +10473,46 @@ header {
         /* line 21, assets/scss/layout/_header.scss */
         header .navbar-wrapper .navbar__brand img {
           max-width: 109px; } }
-      /* line 27, assets/scss/layout/_header.scss */
+      /* line 29, assets/scss/layout/_header.scss */
+      header .navbar-wrapper .navbar__brand #headerLogo.white path:first-child {
+        fill: white; }
+      /* line 35, assets/scss/layout/_header.scss */
+      header .navbar-wrapper .navbar__brand #headerLogo.dark path:first-child {
+        fill: #2B2024; }
+      /* line 41, assets/scss/layout/_header.scss */
       header .navbar-wrapper .navbar__brand #headerLogoDark {
         display: none; }
-      /* line 32, assets/scss/layout/_header.scss */
+      /* line 46, assets/scss/layout/_header.scss */
       header .navbar-wrapper .navbar .nav {
         margin-right: 4.4375rem; }
         @media screen and (max-width: 840px) {
-          /* line 32, assets/scss/layout/_header.scss */
+          /* line 46, assets/scss/layout/_header.scss */
           header .navbar-wrapper .navbar .nav {
             display: none; } }
-        /* line 37, assets/scss/layout/_header.scss */
+        /* line 51, assets/scss/layout/_header.scss */
         header .navbar-wrapper .navbar .nav__item {
           margin-left: 28px;
           margin-right: 12px; }
-          /* line 41, assets/scss/layout/_header.scss */
+          /* line 55, assets/scss/layout/_header.scss */
           header .navbar-wrapper .navbar .nav__item:first-child {
             margin-left: 0; }
-          /* line 45, assets/scss/layout/_header.scss */
+          /* line 59, assets/scss/layout/_header.scss */
           header .navbar-wrapper .navbar .nav__item:last-child {
             margin-right: 0; }
-        /* line 50, assets/scss/layout/_header.scss */
+        /* line 64, assets/scss/layout/_header.scss */
         header .navbar-wrapper .navbar .nav__link {
           text-decoration: none;
           font-weight: 500;
           font-size: 0.875rem;
           color: #2B2024;
           text-transform: uppercase; }
-      /* line 59, assets/scss/layout/_header.scss */
+      /* line 73, assets/scss/layout/_header.scss */
       header .navbar-wrapper .navbar.active {
         background: #2B2024; }
-        /* line 61, assets/scss/layout/_header.scss */
+        /* line 75, assets/scss/layout/_header.scss */
         header .navbar-wrapper .navbar.active * {
           color: white; }
-  /* line 68, assets/scss/layout/_header.scss */
+  /* line 82, assets/scss/layout/_header.scss */
   header #sideMenu {
     position: fixed;
     top: 0;
@@ -10528,29 +10534,29 @@ header {
     -webkit-transition: 0.6s cubic-bezier(0.74, 0.43, 0.68, 0.88);
     transition: 0.6s cubic-bezier(0.74, 0.43, 0.68, 0.88);
     visibility: hidden; }
-    /* line 82, assets/scss/layout/_header.scss */
+    /* line 96, assets/scss/layout/_header.scss */
     header #sideMenu.active {
       right: 0;
       width: 100%;
       visibility: visible; }
-    /* line 87, assets/scss/layout/_header.scss */
+    /* line 101, assets/scss/layout/_header.scss */
     header #sideMenu ul {
       list-style: none; }
-      /* line 94, assets/scss/layout/_header.scss */
+      /* line 108, assets/scss/layout/_header.scss */
       header #sideMenu ul:hover li {
         opacity: 0.3; }
-        /* line 96, assets/scss/layout/_header.scss */
+        /* line 110, assets/scss/layout/_header.scss */
         header #sideMenu ul:hover li:hover {
           opacity: 1; }
-          /* line 100, assets/scss/layout/_header.scss */
+          /* line 114, assets/scss/layout/_header.scss */
           header #sideMenu ul:hover li:hover a::after {
             width: 100%; }
-      /* line 109, assets/scss/layout/_header.scss */
+      /* line 123, assets/scss/layout/_header.scss */
       header #sideMenu ul li {
         padding: 1rem 0;
         -webkit-transition: opacity 0.2s ease-in-out;
         transition: opacity 0.2s ease-in-out; }
-        /* line 113, assets/scss/layout/_header.scss */
+        /* line 127, assets/scss/layout/_header.scss */
         header #sideMenu ul li a {
           font-size: 5rem;
           font-weight: bold;
@@ -10561,10 +10567,10 @@ header {
           position: relative;
           -webkit-backface-visibility: hidden; }
           @media (max-width: 767.98px) {
-            /* line 113, assets/scss/layout/_header.scss */
+            /* line 127, assets/scss/layout/_header.scss */
             header #sideMenu ul li a {
               font-size: 2.5rem; } }
-          /* line 127, assets/scss/layout/_header.scss */
+          /* line 141, assets/scss/layout/_header.scss */
           header #sideMenu ul li a::after {
             width: 0%;
             height: 4px;
@@ -10576,7 +10582,7 @@ header {
             overflow: hidden;
             -webkit-transition: .6s ease-in-out;
             transition: .6s ease-in-out; }
-  /* line 147, assets/scss/layout/_header.scss */
+  /* line 161, assets/scss/layout/_header.scss */
   header #menuToggler {
     position: fixed;
     top: 0;
@@ -10586,24 +10592,24 @@ header {
     width: 40px;
     top: 41px;
     right: 30px; }
-    /* line 155, assets/scss/layout/_header.scss */
+    /* line 169, assets/scss/layout/_header.scss */
     header #menuToggler.active span {
       background: white; }
-      /* line 157, assets/scss/layout/_header.scss */
+      /* line 171, assets/scss/layout/_header.scss */
       header #menuToggler.active span:first-child {
         -webkit-transform: rotate(135deg);
                 transform: rotate(135deg);
         margin-bottom: -0.402rem; }
-      /* line 161, assets/scss/layout/_header.scss */
+      /* line 175, assets/scss/layout/_header.scss */
       header #menuToggler.active span:last-child {
         -webkit-transform: rotate(-135deg);
                 transform: rotate(-135deg);
         margin-top: 6px;
         margin-left: 0; }
-    /* line 170, assets/scss/layout/_header.scss */
+    /* line 184, assets/scss/layout/_header.scss */
     header #menuToggler.white span {
       background: white; }
-    /* line 177, assets/scss/layout/_header.scss */
+    /* line 191, assets/scss/layout/_header.scss */
     header #menuToggler span {
       -webkit-transition: 0.5s ease;
       transition: 0.5s ease;
@@ -10611,7 +10617,7 @@ header {
       width: 35px;
       height: 1px;
       background: #2B2024; }
-      /* line 185, assets/scss/layout/_header.scss */
+      /* line 199, assets/scss/layout/_header.scss */
       header #menuToggler span:last-child {
         margin-top: 8px;
         margin-left: -10px; }
