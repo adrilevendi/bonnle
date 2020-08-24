@@ -24,6 +24,20 @@ header {
 					}
 				}
 
+				#headerLogo {
+					&.white {
+						path:first-child {
+							fill: white;
+						}
+					}
+
+					&.dark {
+						path:first-child {
+							fill: $brand-black;
+						}
+					}
+				}
+
 				#headerLogoDark {
 					display: none;
 				}

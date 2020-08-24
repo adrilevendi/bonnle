@@ -137,6 +137,15 @@ jQuery(document).ready(function () {
     $('.navbar').toggleClass('fade', $(this).scrollTop() > 500);
     $('#menuToggler').addClass('white',$(this).scrollTop() > 50);
     $('#menuToggler').removeClass('white',$(this).scrollTop() > 500);
+    $('#menuToggler').removeClass('white',$(this).scrollTop() > 500);
+
+    if ($('.page-projekt').length) {
+      $('#headerLogo').toggleClass('white', $(this).scrollTop() > 50);
+      
+    }
+   
+
+
   });
   
 

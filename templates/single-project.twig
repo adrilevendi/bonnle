@@ -15,8 +15,8 @@
 		<div class="row">
 			<div class="col-md-6 offset-md-3 mt-5 pt-5">
                 <div id="shape" class="reveal2 bg-{{ c.shape_color }}"></div>
-				<img src="{{ image.url ? image.url : site.theme.link ~ '/dist/img/black-white-girl-square.jpg'}}" class="reveal2">
-				<p class="p mt-5 pt-md-5 reveal2 description">
+				<img src="{{ c.image.url ? c.image.url : site.theme.link ~ '/dist/img/black-white-girl-square.jpg'}}" class="img-fluid reveal2">
+				<p class="p mt-5 py-md-5 reveal2 description">
 				{{c.text}}
                 </p>
 			</div>
