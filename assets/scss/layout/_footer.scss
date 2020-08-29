@@ -1,6 +1,11 @@
 #footer {
 
-    padding: rem(49) rem(107);
+    padding: rem(49) rem(15);
+
+    @include media-breakpoint-up(md) {
+        padding: rem(49) rem(107);
+
+    }
     background-color: $brand-black;
     color: white;
     a {
@@ -12,7 +17,10 @@
         }
     }
 
-    .border-col {
-        border-right: 0.0625rem solid white;
+    @include media-breakpoint-up(md) {
+        .border-col {
+            border-right: 0.0625rem solid white;
+        }
     }
+    
 }

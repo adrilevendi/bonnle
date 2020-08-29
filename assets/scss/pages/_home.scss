@@ -43,10 +43,8 @@
         }
         .graphic-rect {
             position: relative;
-            display: none;
-            @include media-breakpoint-up(md) {
-                display: block;
-            }
+            display: block;
+           
             &--shape {
                 width: 408px;
                 height: 406px;
@@ -61,12 +59,28 @@
                 top: -32px;
                 left: -62px;
             }
+
+            @include media-breakpoint-down(sm) {
+
+               transform: scale(0.5);
+               margin-left: - rem(20);
+            }
         }
 
+        #linesGraphic {
+            display: none;
+
+            @include media-breakpoint-up(md) {
+                display: block;
+            }
+        }
         #qualitiesList {
             h3 {
                 @include media-breakpoint-down(md) {
-                    color: $white;
+                    &:not(:last-child) {
+                        color: $white;
+
+                    }
                 }
 
                 @include media-breakpoint-down(sm) {
@@ -81,6 +95,8 @@
     }
 
     #develop {
+        overflow: hidden;
+
         position: relative;
         &:hover {
             @at-root {
@@ -118,6 +134,11 @@
                 right: 33px;
                 top: 43px;
                 z-index: -1;
+                @include media-breakpoint-down(sm) {
+                    right: 0;
+                    top: 64px;
+                    width: 50%;
+                }
             }
         }
 
@@ -134,13 +155,21 @@
     }
 
     #design {
+        overflow: hidden;
+
         #title {
+            overflow: hidden;
             &::after {
                 content: url("../../dist/img/Rectangle-text-bg-pink.svg");
                 position: absolute;
                 right: 33px;
                 top: 43px;
                 z-index: -1;
+                @include media-breakpoint-down(sm) {
+                    right: 0;
+                    top: 64px;
+                    width: 50%;
+                }
             }
         }
 

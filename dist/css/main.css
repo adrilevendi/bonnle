@@ -10624,21 +10624,26 @@ header {
 
 /* line 1, assets/scss/layout/_footer.scss */
 #footer {
-  padding: 3.0625rem 6.6875rem;
+  padding: 3.0625rem 0.9375rem;
   background-color: #2B2024;
   color: white; }
-  /* line 6, assets/scss/layout/_footer.scss */
+  @media (min-width: 768px) {
+    /* line 1, assets/scss/layout/_footer.scss */
+    #footer {
+      padding: 3.0625rem 6.6875rem; } }
+  /* line 11, assets/scss/layout/_footer.scss */
   #footer a {
     color: white;
     text-decoration: none;
     -webkit-transition: 0.1s ease;
     transition: 0.1s ease; }
-    /* line 10, assets/scss/layout/_footer.scss */
+    /* line 15, assets/scss/layout/_footer.scss */
     #footer a:hover {
       color: #cccccc; }
-  /* line 15, assets/scss/layout/_footer.scss */
-  #footer .border-col {
-    border-right: 0.0625rem solid white; }
+  @media (min-width: 768px) {
+    /* line 21, assets/scss/layout/_footer.scss */
+    #footer .border-col {
+      border-right: 0.0625rem solid white; } }
 
 /* line 1, assets/scss/_general.scss */
 html {
@@ -10808,12 +10813,8 @@ a.btn {
 /* line 44, assets/scss/pages/_home.scss */
 .page-home #hero .graphic-rect {
   position: relative;
-  display: none; }
-  @media (min-width: 768px) {
-    /* line 44, assets/scss/pages/_home.scss */
-    .page-home #hero .graphic-rect {
-      display: block; } }
-  /* line 50, assets/scss/pages/_home.scss */
+  display: block; }
+  /* line 48, assets/scss/pages/_home.scss */
   .page-home #hero .graphic-rect--shape {
     width: 408px;
     height: 406px;
@@ -10822,21 +10823,35 @@ a.btn {
             box-shadow: 24px 15px 74px rgba(0, 0, 0, 0.25);
     -webkit-transform: rotate(26.33deg);
             transform: rotate(26.33deg); }
-  /* line 58, assets/scss/pages/_home.scss */
+  /* line 56, assets/scss/pages/_home.scss */
   .page-home #hero .graphic-rect--image {
     position: absolute;
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
     top: -32px;
     left: -62px; }
+  @media (max-width: 767.98px) {
+    /* line 44, assets/scss/pages/_home.scss */
+    .page-home #hero .graphic-rect {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      margin-left: -1.25rem; } }
+
+/* line 70, assets/scss/pages/_home.scss */
+.page-home #hero #linesGraphic {
+  display: none; }
+  @media (min-width: 768px) {
+    /* line 70, assets/scss/pages/_home.scss */
+    .page-home #hero #linesGraphic {
+      display: block; } }
 
 @media (max-width: 991.98px) {
-  /* line 67, assets/scss/pages/_home.scss */
-  .page-home #hero #qualitiesList h3 {
+  /* line 80, assets/scss/pages/_home.scss */
+  .page-home #hero #qualitiesList h3:not(:last-child) {
     color: #fff; } }
 
 @media (max-width: 767.98px) {
-  /* line 67, assets/scss/pages/_home.scss */
+  /* line 78, assets/scss/pages/_home.scss */
   .page-home #hero #qualitiesList h3 {
     font-size: 3rem; } }
 
@@ -10845,19 +10860,20 @@ a.btn {
   .page-home #hero {
     background: #2B2024; } }
 
-/* line 83, assets/scss/pages/_home.scss */
+/* line 97, assets/scss/pages/_home.scss */
 .page-home #develop {
+  overflow: hidden;
   position: relative; }
-  /* line 88, assets/scss/pages/_home.scss */
+  /* line 104, assets/scss/pages/_home.scss */
   .navbar_brand img {
     display: none; }
-  /* line 92, assets/scss/pages/_home.scss */
+  /* line 108, assets/scss/pages/_home.scss */
   .navbar_brand #headerLogoDark {
     display: block; }
-  /* line 98, assets/scss/pages/_home.scss */
+  /* line 114, assets/scss/pages/_home.scss */
   .page-home #developRect {
     margin-top: 9.6875rem; }
-  /* line 105, assets/scss/pages/_home.scss */
+  /* line 121, assets/scss/pages/_home.scss */
   .page-home #develop .graphic-rect--image {
     position: absolute;
     -webkit-transform: scale(0.6);
@@ -10865,127 +10881,144 @@ a.btn {
     top: -56px;
     left: -146px;
     max-width: 699px; }
-  /* line 115, assets/scss/pages/_home.scss */
+  /* line 131, assets/scss/pages/_home.scss */
   .page-home #develop #title::after {
     content: url("../../dist/img/Rectangle-text-bg-pink.svg");
     position: absolute;
     right: 33px;
     top: 43px;
     z-index: -1; }
-  /* line 124, assets/scss/pages/_home.scss */
+    @media (max-width: 767.98px) {
+      /* line 131, assets/scss/pages/_home.scss */
+      .page-home #develop #title::after {
+        right: 0;
+        top: 64px;
+        width: 50%; } }
+  /* line 145, assets/scss/pages/_home.scss */
   .page-home #developRectDots {
     position: absolute;
     display: none;
     left: 477px;
     bottom: 175px; }
     @media (min-width: 768px) {
-      /* line 124, assets/scss/pages/_home.scss */
+      /* line 145, assets/scss/pages/_home.scss */
       .page-home #developRectDots {
         display: block; } }
 
-/* line 138, assets/scss/pages/_home.scss */
-.page-home #design #title::after {
-  content: url("../../dist/img/Rectangle-text-bg-pink.svg");
-  position: absolute;
-  right: 33px;
-  top: 43px;
-  z-index: -1; }
-
-/* line 147, assets/scss/pages/_home.scss */
-.page-home #designGraphic {
-  position: relative; }
-  @media (max-width: 991.98px) {
-    /* line 147, assets/scss/pages/_home.scss */
-    .page-home #designGraphic {
-      display: none; } }
-  /* line 152, assets/scss/pages/_home.scss */
-  .page-home #designGraphicRect {
-    position: absolute;
-    width: 13rem;
-    height: 28.1875rem;
-    background: #FD0054;
-    -webkit-transform: rotate(-64.6deg);
-            transform: rotate(-64.6deg);
-    z-index: -3;
-    top: 21rem;
-    left: 9rem; }
-  /* line 163, assets/scss/pages/_home.scss */
-  .page-home #designGraphicCircle {
-    width: 20.5rem;
-    position: absolute;
-    height: 20.5rem;
-    border-radius: 50%;
-    background: #2B2024;
-    z-index: -3;
-    top: 8.37rem;
-    right: 3rem;
-    top: -8rem;
-    right: 0; }
+/* line 157, assets/scss/pages/_home.scss */
+.page-home #design {
+  overflow: hidden; }
+  /* line 160, assets/scss/pages/_home.scss */
+  .page-home #design #title {
+    overflow: hidden; }
+    /* line 162, assets/scss/pages/_home.scss */
+    .page-home #design #title::after {
+      content: url("../../dist/img/Rectangle-text-bg-pink.svg");
+      position: absolute;
+      right: 33px;
+      top: 43px;
+      z-index: -1; }
+      @media (max-width: 767.98px) {
+        /* line 162, assets/scss/pages/_home.scss */
+        .page-home #design #title::after {
+          right: 0;
+          top: 64px;
+          width: 50%; } }
   /* line 176, assets/scss/pages/_home.scss */
-  .page-home #designGraphicLines {
-    position: absolute;
-    z-index: -2;
-    width: 100%;
-    height: 3.125rem;
-    top: -63px;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg); }
-    /* line 187, assets/scss/pages/_home.scss */
-    .page-home #designGraphicLines hr:first-child {
-      margin-bottom: 30px; }
+  .page-home #designGraphic {
+    position: relative; }
+    @media (max-width: 991.98px) {
+      /* line 176, assets/scss/pages/_home.scss */
+      .page-home #designGraphic {
+        display: none; } }
+    /* line 181, assets/scss/pages/_home.scss */
+    .page-home #designGraphicRect {
+      position: absolute;
+      width: 13rem;
+      height: 28.1875rem;
+      background: #FD0054;
+      -webkit-transform: rotate(-64.6deg);
+              transform: rotate(-64.6deg);
+      z-index: -3;
+      top: 21rem;
+      left: 9rem; }
     /* line 192, assets/scss/pages/_home.scss */
-    .page-home #designGraphicLines hr:nth-child(2) {
-      margin-right: -6rem;
-      max-width: 100%;
-      margin-top: 4rem; }
-  /* line 199, assets/scss/pages/_home.scss */
-  .page-home #designGraphicScreenshot1 {
-    top: 0;
-    z-index: 0;
-    position: absolute; }
-  /* line 205, assets/scss/pages/_home.scss */
-  .page-home #designGraphicScreenshot2 {
-    top: 4.375rem;
-    z-index: 0;
-    position: absolute;
-    right: 1rem; }
+    .page-home #designGraphicCircle {
+      width: 20.5rem;
+      position: absolute;
+      height: 20.5rem;
+      border-radius: 50%;
+      background: #2B2024;
+      z-index: -3;
+      top: 8.37rem;
+      right: 3rem;
+      top: -8rem;
+      right: 0; }
+    /* line 205, assets/scss/pages/_home.scss */
+    .page-home #designGraphicLines {
+      position: absolute;
+      z-index: -2;
+      width: 100%;
+      height: 3.125rem;
+      top: -63px;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg); }
+      /* line 216, assets/scss/pages/_home.scss */
+      .page-home #designGraphicLines hr:first-child {
+        margin-bottom: 30px; }
+      /* line 221, assets/scss/pages/_home.scss */
+      .page-home #designGraphicLines hr:nth-child(2) {
+        margin-right: -6rem;
+        max-width: 100%;
+        margin-top: 4rem; }
+    /* line 228, assets/scss/pages/_home.scss */
+    .page-home #designGraphicScreenshot1 {
+      top: 0;
+      z-index: 0;
+      position: absolute; }
+    /* line 234, assets/scss/pages/_home.scss */
+    .page-home #designGraphicScreenshot2 {
+      top: 4.375rem;
+      z-index: 0;
+      position: absolute;
+      right: 1rem; }
 
-/* line 217, assets/scss/pages/_home.scss */
+/* line 246, assets/scss/pages/_home.scss */
 .page-home #works .work {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
   @media (max-width: 991.98px) {
-    /* line 217, assets/scss/pages/_home.scss */
+    /* line 246, assets/scss/pages/_home.scss */
     .page-home #works .work {
       margin-bottom: 4rem; } }
-  /* line 222, assets/scss/pages/_home.scss */
+  /* line 251, assets/scss/pages/_home.scss */
   .page-home #works .work__image {
     overflow: hidden;
     border: 0.1875rem solid #2B2024; }
-    /* line 225, assets/scss/pages/_home.scss */
+    /* line 254, assets/scss/pages/_home.scss */
     .page-home #works .work__image img {
       -webkit-transition: .7s ease-in-out;
       transition: .7s ease-in-out;
       max-width: 100%;
       height: 28.125rem; }
       @media (min-width: 768px) {
-        /* line 225, assets/scss/pages/_home.scss */
+        /* line 254, assets/scss/pages/_home.scss */
         .page-home #works .work__image img {
           height: 39.8125rem; } }
-  /* line 237, assets/scss/pages/_home.scss */
+  /* line 266, assets/scss/pages/_home.scss */
   .page-home #works .work__title {
     margin-top: 1.3125rem;
     text-align: center; }
-    /* line 240, assets/scss/pages/_home.scss */
+    /* line 269, assets/scss/pages/_home.scss */
     .page-home #works .work__title a {
       text-decoration: none; }
-      /* line 242, assets/scss/pages/_home.scss */
+      /* line 271, assets/scss/pages/_home.scss */
       .page-home #works .work__title a h5 {
         position: relative;
         display: inline-block;
         padding-bottom: 0.4rem; }
-        /* line 246, assets/scss/pages/_home.scss */
+        /* line 275, assets/scss/pages/_home.scss */
         .page-home #works .work__title a h5::after {
           width: 0%;
           height: 4px;
@@ -10997,25 +11030,25 @@ a.btn {
           overflow: hidden;
           -webkit-transition: .6s ease-in-out;
           transition: .6s ease-in-out; }
-  /* line 264, assets/scss/pages/_home.scss */
+  /* line 293, assets/scss/pages/_home.scss */
   .page-home #works .work__wrapper {
     margin: auto; }
     @media (min-width: 768px) {
-      /* line 264, assets/scss/pages/_home.scss */
+      /* line 293, assets/scss/pages/_home.scss */
       .page-home #works .work__wrapper {
         margin: unset; } }
-    /* line 270, assets/scss/pages/_home.scss */
+    /* line 299, assets/scss/pages/_home.scss */
     .page-home #works .work__wrapper:hover a {
       text-decoration: none; }
-      /* line 273, assets/scss/pages/_home.scss */
+      /* line 302, assets/scss/pages/_home.scss */
       .page-home #works .work__wrapper:hover a h5::after {
         width: 100%; }
-    /* line 281, assets/scss/pages/_home.scss */
+    /* line 310, assets/scss/pages/_home.scss */
     .page-home #works .work__wrapper:hover img {
       -webkit-transform: scale(1.05);
               transform: scale(1.05); }
 
-/* line 290, assets/scss/pages/_home.scss */
+/* line 319, assets/scss/pages/_home.scss */
 .page-home #works .graphic-divider {
   max-height: 40rem;
   display: -webkit-box;
@@ -11023,39 +11056,39 @@ a.btn {
   display: flex;
   text-align: center; }
   @media (min-width: 768px) {
-    /* line 290, assets/scss/pages/_home.scss */
+    /* line 319, assets/scss/pages/_home.scss */
     .page-home #works .graphic-divider {
       width: 13.6875rem; } }
-  /* line 300, assets/scss/pages/_home.scss */
+  /* line 329, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider svg {
     display: none; }
     @media (min-width: 768px) {
-      /* line 300, assets/scss/pages/_home.scss */
+      /* line 329, assets/scss/pages/_home.scss */
       .page-home #works .graphic-divider svg {
         display: block;
         position: absolute;
         z-index: -1; } }
-  /* line 309, assets/scss/pages/_home.scss */
+  /* line 338, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider__line {
     height: 100%;
     border-right: 0.0625rem solid #FD0054;
     width: 0;
     margin: auto; }
-  /* line 317, assets/scss/pages/_home.scss */
+  /* line 346, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider #graphic1 {
     margin-top: 3rem;
     margin-left: -7.3rem;
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite; }
-  /* line 325, assets/scss/pages/_home.scss */
+  /* line 354, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider #graphic2 {
     bottom: 18rem;
     margin-left: 6.7rem; }
-  /* line 330, assets/scss/pages/_home.scss */
+  /* line 359, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider #graphic3 {
     margin-top: 3rem;
     margin-left: -1.5rem; }
-  /* line 335, assets/scss/pages/_home.scss */
+  /* line 364, assets/scss/pages/_home.scss */
   .page-home #works .graphic-divider #graphic4 {
     margin-left: 6.9rem;
     bottom: 3rem; }
@@ -11084,17 +11117,17 @@ a.btn {
   to {
     margin-top: 3rem; } }
 
-/* line 366, assets/scss/pages/_home.scss */
+/* line 395, assets/scss/pages/_home.scss */
 .page-home #cta h2 {
   font-size: 5rem;
   text-transform: lowercase;
   letter-spacing: 2px; }
   @media (max-width: 767.98px) {
-    /* line 366, assets/scss/pages/_home.scss */
+    /* line 395, assets/scss/pages/_home.scss */
     .page-home #cta h2 {
       font-size: 3rem; } }
 
-/* line 374, assets/scss/pages/_home.scss */
+/* line 403, assets/scss/pages/_home.scss */
 .page-home #cta .btn-smart {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11109,18 +11142,18 @@ a.btn {
       -ms-flex-align: center;
           align-items: center;
   margin: auto; }
-  /* line 383, assets/scss/pages/_home.scss */
+  /* line 412, assets/scss/pages/_home.scss */
   .page-home #cta .btn-smart__link {
     display: contents;
     text-decoration: none; }
-  /* line 388, assets/scss/pages/_home.scss */
+  /* line 417, assets/scss/pages/_home.scss */
   .page-home #cta .btn-smart__rect {
     position: absolute;
     height: 50px;
     width: 250px;
     border: solid 3px #2B2024;
     border-radius: 0; }
-  /* line 397, assets/scss/pages/_home.scss */
+  /* line 426, assets/scss/pages/_home.scss */
   .page-home #cta .btn-smart__button {
     letter-spacing: 2px; }
 
