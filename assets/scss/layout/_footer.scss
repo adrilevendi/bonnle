@@ -1,5 +1,18 @@
-.footer {
+#footer {
 
- 
+    padding: rem(49) rem(107);
+    background-color: $brand-black;
+    color: white;
+    a {
+        color: white;
+        text-decoration: none;
+        transition: 0.1s ease;
+        &:hover {
+            color: darken($color: #fff, $amount: 20)
+        }
+    }
 
+    .border-col {
+        border-right: 0.0625rem solid white;
+    }
 }

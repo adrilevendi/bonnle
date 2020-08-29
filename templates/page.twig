@@ -1,8 +1,17 @@
 {% extends "base.twig" %}
 
-{% block body_class %}contacts{% endblock %}
+{% block body_class %}contacts
+{% endblock %}
 
 {% block content %}
 
+	<div class="container my-5">
+		<div class="col-md-12 mb-4">
+			<h2>{{post.title}}</h2>
+		</div>
+		<div class="col-md-12">
+			{{post.content}}
+		</div>
+	</div>
 
 {% endblock %}

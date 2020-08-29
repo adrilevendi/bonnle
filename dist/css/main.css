@@ -10622,6 +10622,24 @@ header {
         margin-top: 8px;
         margin-left: -10px; }
 
+/* line 1, assets/scss/layout/_footer.scss */
+#footer {
+  padding: 3.0625rem 6.6875rem;
+  background-color: #2B2024;
+  color: white; }
+  /* line 6, assets/scss/layout/_footer.scss */
+  #footer a {
+    color: white;
+    text-decoration: none;
+    -webkit-transition: 0.1s ease;
+    transition: 0.1s ease; }
+    /* line 10, assets/scss/layout/_footer.scss */
+    #footer a:hover {
+      color: #cccccc; }
+  /* line 15, assets/scss/layout/_footer.scss */
+  #footer .border-col {
+    border-right: 0.0625rem solid white; }
+
 /* line 1, assets/scss/_general.scss */
 html {
   scroll-behavior: smooth;
