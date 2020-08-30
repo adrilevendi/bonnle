@@ -1,7 +1,14 @@
 header {
-	 padding-bottom: 94px;
+	 padding-bottom: rem(94);
 	 @include media-breakpoint-down(md) {
 		background: $brand-black;
+		padding-bottom: rem(33);
+
+	}
+
+	@include media-breakpoint-down(sm) {
+		background: none
+
 	}
 	.navbar-wrapper {
 		position: fixed;
@@ -13,7 +20,7 @@ header {
 			z-index: 6;
 			transition: 0.3s ease;
 			@include media-breakpoint-down(sm) {
-				padding: 2.0625rem 1rem;
+				padding: 1.5rem 1rem;
 				
 			}
 

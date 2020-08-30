@@ -131,12 +131,22 @@ tl.from('.reveal2',{y:60, opacity:0, delay:0.5, duration:0.4, stagger:0.3});
 
 jQuery(document).ready(function () {
 
+  console.log("Scrolltop: ", $("#menuToggler").scrollTop());
 
   $(window).scroll(function () {
+    console.log("Scrolltop: ", $(this).scrollTop());
     $('.navbar').toggleClass('active', $(this).scrollTop() > 50);
     $('.navbar').toggleClass('fade', $(this).scrollTop() > 500);
-    $('#menuToggler').addClass('white',$(this).scrollTop() > 50);
-    $('#menuToggler').removeClass('white',$(this).scrollTop() > 500);
+
+    if($('#menuToggler').scrollTop() > 50) {
+      $('#menuToggler').addClass('white');
+
+
+    }
+    if($('#menuToggler').scrollTop() > 500) {
+      $('#menuToggler').removeClass('white');
+
+    }
 
     if ($('.page-projekt').length) {
       $('#headerLogo').toggleClass('white', $(this).scrollTop() > 50);
