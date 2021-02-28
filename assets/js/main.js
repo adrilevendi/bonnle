@@ -112,6 +112,32 @@ function contentAnimation(container) {
 //EndPage Transitions
 
 gsap.registerPlugin(TextPlugin);
+
+
+// Hero text animation
+
+var textTl = gsap.timeline({defaults: {progress: 43}}).repeat(-1);
+
+const initalHeroWord = $('#changeTextHero').text();
+
+
+$('.change-hero-text-values').each(function(e) {
+
+  if ($(this).text() != initalHeroWord) {
+    textTl.to('#changeTextHero', {duration: 2, text: "", ease: "none"});
+
+    textTl.to('#changeTextHero', {duration: 2, text: $(this).text(), ease: "power2.out"});
+  }
+
+});
+textTl.to('#changeTextHero', {duration: 2, text: "", ease: "none"});
+
+textTl.to('#changeTextHero', {duration: 2, text: initalHeroWord, ease: "none"});
+
+// End Hero text animation
+
+
+
 gsap.from('.reveal',{y:60, opacity:0, delay:0.1, duration:0.4, stagger:0.2});
 
 var tl = gsap.timeline();
@@ -138,18 +164,21 @@ jQuery(document).ready(function () {
     $('.navbar').toggleClass('active', $(this).scrollTop() > 50);
     $('.navbar').toggleClass('fade', $(this).scrollTop() > 500);
 
-    if($('#menuToggler').scrollTop() > 50) {
-      $('#menuToggler').addClass('white');
+    if($(this).scrollTop() > 50) {
+      $(this).addClass('white');
 
 
+    } else {
+      $('#headerLogo').removeClass('white');
     }
+
     if($('#menuToggler').scrollTop() > 500) {
       $('#menuToggler').removeClass('white');
 
     }
 
     if ($('.page-projekt').length) {
-      $('#headerLogo').toggleClass('white', $(this).scrollTop() > 50);
+      // $('#headerLogo').toggleClass('white', $(this).scrollTop() > 50);
       
     }
    
@@ -160,6 +189,7 @@ jQuery(document).ready(function () {
 
   $('#sideMenu li').click(() => {
     $('#sideMenu').removeClass('active');
+    $('#headerLogo').removeClass('active');
     $('#menuToggler').removeClass('active');
 
   });
@@ -284,10 +314,13 @@ jQuery(document).ready(function () {
     if($('.navbar').hasClass('active')) {
       $('.navbar').removeClass('active');
       $('#menuToggler').removeClass('white');
+      $('#headerLogo').removeClass('white');
+
     }
 
     //Side Menu animations
     if ($('#sideMenu').hasClass('active')) {
+      $('#headerLogo').addClass('white');
       var tl = gsap.timeline();
       tl.from("#sideMenu li", {
         opacity: 0,
@@ -304,6 +337,7 @@ jQuery(document).ready(function () {
 
     //EndSide Menu animations
 
+    //Hero text change
 
   });
 });

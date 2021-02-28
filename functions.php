@@ -70,6 +70,7 @@ class StarterSite extends Timber\Site
         add_action('init', array($this, 'register_vendor_user_role'));
         add_filter('use_block_editor_for_post', '__return_false', 10);
         add_action('login_head', array($this, 'change_login_logo'));
+        add_action( 'init', array( $this, 'add_option_page' ) );
 
         parent::__construct();
     }
@@ -95,6 +96,26 @@ class StarterSite extends Timber\Site
     public function register_taxonomies()
     {
 
+    }
+
+    public function add_option_page()
+    {
+        if( function_exists('acf_add_options_page') ) {
+            acf_add_options_page(array(
+                'page_title'   => 'Bonnle Settings',
+                'menu_title'  => 'Bonnle Info',
+                'menu_slug'   => 'bonnle-settings',
+                'capability'  => 'edit_posts',
+                'redirect'    => false
+            ));
+            // acf_add_options_sub_page( array(
+            //     'page_title'   => 'Slider',
+            //     'menu_title'  => 'Slider',
+            //     'parent_slug'   => 'bonnle-settings',
+            //     'capability'  => 'edit_posts',
+            //     'redirect'    => false
+            // ) );
+        }
     }
 
     /** This is where you add some context

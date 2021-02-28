@@ -1,4 +1,17 @@
 .page-home {
+
+    header {
+        background: $brand-black !important;
+
+        
+
+        #menuToggler {
+            span.home-bg-white {
+                background: white;
+            }
+        }
+    }
+
     section {
         min-height: 100vh;
     }

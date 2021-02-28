@@ -4,7 +4,9 @@
 {% endblock %}
 
 {% block content %}
-
+{% set h = post.get_field('home_content') %}
+{% set hero = h.hero %}
+{% set q = hero.qualities %}
 	<div id="scrollContent">
 		<section id="hero" class="slide-item">
 			<img src="{{site.theme.link}}/dist/img/big-ellipse-black.svg" id="bigCiricleIntro"/>
@@ -12,7 +14,16 @@
 			<div class="container-fluid">
 				<div class="row ">
 					<div class="col-md-6 pt-4 mt-2 offset-md-1">
-						<h1 class="display3 gray normal" id="introTitle">We develop</h1>
+						<h1 class="display3 gray normal" id="introTitle">
+						{# her:<pre class="text-white p">{{dump(hero.title.animated_text.dynamic_text|first.value)}}</pre> #}
+						{% if hero.title.type is not same as('animated') %}
+							{{hero.title.text}}
+						{% else %}
+							{{hero.title.animated_text.static_text}} <span id="changeTextHero">{{hero.title.animated_text.dynamic_text|first.value}}</span></h1>
+							{% for w in hero.title.animated_text.dynamic_text %}
+								<span class="d-none change-hero-text-values">{{w.value}}</span>
+							{% endfor %}
+						{% endif %}
 					</div>
 					<div class="col-md-4 offset-md-1" id="linesGraphic">
 						<img src="{{site.theme.link}}/dist/img/paralel-lines-pink.svg">
@@ -27,10 +38,17 @@
 					</div>
 					<div class="col-md-4 offset-md-1 mt-5 pt-5">
 						<div id="qualitiesList" class="mt-4">
+						{% if q %}
+
+						{% for i in q %}
+							<h3 class="display3 mb-3 {{ loop.last ? 'pink' : 'black'}} bold  reveal">{{i.quality}}</h3>
+						{% endfor %}
+						{% else %}
 							<h3 class="display3 mb-3 black bold  reveal">creative</h3>
 							<h3 class="display3 mb-3 black bold  reveal">passionate</h3>
 							<h3 class="display3 mb-3 black bold  reveal">joyful</h3>
 							<h3 class="display3 mb-3 pink bold reveal">excellent.</h3>
+						{% endif %}
 						</div>
 
 					</div>

@@ -1,7 +1,7 @@
 header {
 	 padding-bottom: rem(94);
 	 @include media-breakpoint-down(md) {
-		background: $brand-black;
+		// background: $brand-black;
 		padding-bottom: rem(33);
 
 	}
@@ -107,6 +107,7 @@ header {
 		}
 		ul {
 			list-style: none;
+			padding: 0;
 
 			li {
 				
@@ -172,6 +173,9 @@ header {
 		z-index: 7;
 		height: 40px;
 		width: 40px;
+		@include media-breakpoint-down(sm) {
+			top: 35px;
+		}
 		&.active {
 			span{ 
 				background: white;
@@ -209,5 +213,20 @@ header {
 			}
 
 		}
+	}
+}
+
+body:not(.page-home) {
+	header {
+		.navbar.active {
+			#headerLogo {
+				path {
+					&:first-child {
+						fill: white;
+					}
+				}
+			}
+		}
+		
 	}
 }
