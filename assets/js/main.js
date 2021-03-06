@@ -124,13 +124,13 @@ const initalHeroWord = $('#changeTextHero').text();
 $('.change-hero-text-values').each(function(e) {
 
   if ($(this).text() != initalHeroWord) {
-    textTl.to('#changeTextHero', {duration: 2, text: "", ease: "none"});
+    textTl.to('#changeTextHero', {duration: 1.3, text: "", ease: "none", delay: 1});
 
     textTl.to('#changeTextHero', {duration: 2, text: $(this).text(), ease: "power2.out"});
   }
 
 });
-textTl.to('#changeTextHero', {duration: 2, text: "", ease: "none"});
+textTl.to('#changeTextHero', {duration: 1.3, text: "", ease: "none", delay: 1});
 
 textTl.to('#changeTextHero', {duration: 2, text: initalHeroWord, ease: "none"});
 
