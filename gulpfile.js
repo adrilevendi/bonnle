@@ -56,7 +56,7 @@ function style() {
 
 // images
 function images() {
-    return src('./assets/images/**/*.{png,jpg,jpeg}')
+    return src('./assets/images/**/*.{png,jpg,jpeg,avif}')
         .pipe(newer('./dist/img'))
         // .pipe(tinypng({
         //     key: 'LoNi0JXMlZmcc7Tl8rVzmQenFAmkEjIH',
