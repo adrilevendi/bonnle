@@ -1,8 +1,6 @@
 header {
 	 padding-bottom: 94px;
-	 @include media-breakpoint-down(md) {
-		background: $brand-black;
-	}
+
 	.navbar-wrapper {
 		position: fixed;
 		z-index: 6;
@@ -61,6 +59,16 @@ header {
 				* {
 					color:white
 				}
+
+				img {
+					content:url("../img/bonnle-logo-light.svg");
+				}
+			}
+
+			&.navbar-white {
+
+
+
 			}
 		}
 	}
@@ -86,6 +94,10 @@ header {
 		}
 		ul {
 			list-style: none;
+
+			@include media-breakpoint-down(md) {
+				padding: 0;
+			}
 
 			li {
 				

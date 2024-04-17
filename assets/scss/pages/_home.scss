@@ -2,6 +2,15 @@
     section {
         min-height: 100vh;
     }
+    header {
+        @include media-breakpoint-down(md) {
+            background: $brand-black;
+
+        }
+        span{ 
+                background: white!important;
+            }
+    }
 
     .graphic-rect {
         display: none;

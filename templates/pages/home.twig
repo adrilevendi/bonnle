@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block content %}
+{% set projects = post.get_field('gpminvoice-group') %}
 
 	<div id="scrollContent">
 		<section id="hero" class="slide-item">
@@ -196,8 +197,9 @@
 									<img src="{{site.theme.link}}/dist/img/black-white-girl.jpg">
 								</div>
 								<div class="work__title">
-									<a href=""><h5>Ana Voltana</h5></a>
+									<a href="{{site.theme.link}}"><h5>Ana Schweitzinger</h5></a>
 								</div>
+
 </a>
 							</div>
 						</div>
