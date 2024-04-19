@@ -1,7 +1,11 @@
 .page-home {
 
     header {
-        background: $brand-black !important;
+
+        @include media-breakpoint-down(sm) {
+            background: $brand-black !important;
+
+        }
 
         
 
@@ -50,7 +54,7 @@
 
         #introTitle {
             @include media-breakpoint-down(sm) {
-                font-size: 3rem;
+                font-size: 2.7rem;
                 font-weight: 600;
             }
         }
