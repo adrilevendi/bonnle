@@ -1,3 +1,4 @@
+{#<?php#}
 {% extends "base.twig" %}
 
 {% block body_class %}home
@@ -6,8 +7,10 @@
 {% block content %}
 {% set h = post.get_field('home_content') %}
 {% set hero = h.hero %}
-{% set q = hero.qualities %}
-{# {% set hero.title.type = 'animated' %} #}
+{% set q = hero.side %}
+{% set s1 = h.section_1 %}
+{% set s2 = h.section_2 %}
+{# {{ dmp(q) }} #}
 	<div id="scrollContent">
 		<section id="hero" class="slide-item">
 			<img src="{{site.theme.link}}/dist/img/big-ellipse-black.svg" id="bigCiricleIntro"/>
@@ -15,10 +18,10 @@
 			<div class="container-fluid">
 				<div class="row ">
 					<div class="col-md-6 pt-4 mt-2 offset-md-1">
-						<h1 class="display3 gray normal" id="introTitle"><span>|</span>
+						<h1 class="display3 gray normal {{  hero.title.type is not same as('animated')? '': 'cursor-active'}}" id="introTitle">
 						{# her:<pre class="text-white p">{{dump(hero.title.animated_text)}}</pre> #}
 						{% if hero.title.type is not same as('animated') %}
-							{{hero.title.static_text}}
+							{{hero.title.text}}
 						{% else %}
 							 <span id="changeTextHero">{{hero.title.animated_text.dynamic_text|first.value}}</span></h1>
 							{% for w in hero.title.animated_text %}
@@ -42,10 +45,10 @@
 						{% if q %}
 
 						{% for i in q %}
-							<h3 class="display3 mb-3 {{ loop.last ? 'pink' : 'black'}} bold  reveal">{{i.quality}}</h3>
+							<h3 class="display3 mb-3 {{ loop.last ? 'pink' : 'black'}} bold  reveal">{{i.word}}{{ loop.last ? '.' : ''}}</h3>
 						{% endfor %}
 						{% else %}
-							<h3 class="display3 mb-3 black bold  reveal">{{__('creative', 'bnl')}}</h3>
+							<h3 class="display3 mb-3 black bold  reveal">creative</h3>
 							<h3 class="display3 mb-3 black bold  reveal">passionate</h3>
 							<h3 class="display3 mb-3 black bold  reveal">joyful</h3>
 							<h3 class="display3 mb-3 pink bold reveal">excellent.</h3>
@@ -73,11 +76,12 @@
 					</div>
 
 					<div class="col-md-6">
-						<h3 class="display1" id="title">develop</h3>
+						<h3 class="display1" id="title">{{ s1.title }}</h3>
 
 						<p class="mt-5 pt-5 px-md-5 p text-center text-md-left">
-						We strive to develop exceptional webapps and websites, delivering projects that are easy to work with, avoiding unecessary ready-to-go libraries that slow down the site.
+						{{s1.text}}
 							{# Zhvillojme faqje dhe applikacione web me perkushtim maksimal per te dorezuar një punë perfekte, qe rezulton ne një aplikacion të shpejtë dhe funksional.</p> #}
+						
 					</div>
 				</div>
 				<img id="developRectDots" src="{{site.theme.link}}/dist/img/rect-dots-pink.svg">
@@ -105,14 +109,13 @@
 					</div>
 
 					<div class="col-md-6 overflow-hidden">
-						<h3 class="display1" id="title">design</h3>
+						<h3 class="display1" id="title">{{s2.title}}</h3>
 
 						<p class="mt-5 pt-5 p px-md-5 text-center text-md-left">
-							User interface and experience are key points in providing an easy service with smooth interaction, in order to get higher convertions. Our desingers pay attention to every detail and workflow in order to design a smooth running and appealing application.
-							<br> Every pixel counts! We make our efforts to follow every measure from the design, while maintaining responsiveness and content flow.  </p>
+							{{s2.text}}</p>
 					</div>
 				</div>
-				<img id="developRectDots" src="{{site.theme.link}}/dist/img/rect-dots-pink.svg">
+				{# <img id="developRectDots" src="{{site.theme.link}}/dist/img/rect-dots-pink.svg"> #}
 			</div>
 		</section>
 
@@ -230,7 +233,7 @@
 		<div class="container">
 		<div class="row mt-5">
 				<div class="col-sm-12 text-center">
-					<h2 class="mb-5 pb-5">Contact us</h2>
+					<h2 class="mb-5 pb-5">{{h.cta.title ? h.cta.title : 'Contact us'}}</h2>
 
 					<div class="btn-smart">
 					<a href="mailto:hello@bonnle.al" class="btn-smart__link">

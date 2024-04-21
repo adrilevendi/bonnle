@@ -22,5 +22,55 @@
             border-right: 0.0625rem solid white;
         }
     }
+
+    #langSwitcherWrapper {
+        position:relative;
+
+                &::before {
+                    position: absolute;
+                    top: 16px;
+                    right:3px;
+                    content: "";
+                    width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid $brand-pink;
+                }
+            }
+
+    #langswitcher {
+
+                border-bottom: 1px solid white;
+                 &:hover{
+                    border: none;
+                }
+
+        ul{
+            list-style: none;
+            max-width: 100px;
+            max-height: 36px;
+            overflow: hidden;
+    padding: 10px;
+    font-weight: 600;
+
+            &:hover{
+                max-height: unset;
+                    box-shadow: 2px 3px 12px 3px rgba(0,0,0,0.2);
+                border-radius: 5px;
+
+                & li.order-0 {
+                }
+
+            }
+
+
+        }
+    @include media-breakpoint-up(md) {
+        MARGIN-TOP: -14px;
+    }
+
+    }
+
     
 }

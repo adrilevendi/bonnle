@@ -2,6 +2,10 @@
 
     header {
 
+        #textPath {
+            fill: white;
+        }
+
         @include media-breakpoint-down(sm) {
             background: $brand-black !important;
 
@@ -52,10 +56,27 @@
 
     #hero {
 
+        @keyframes blink {
+                from, to {border-color: transparent;}
+                 50% {border-color: white;}
+        }
+
+        #animatedCursor {
+            opacity: 0;
+        }
+
         #introTitle {
+            
             @include media-breakpoint-down(sm) {
                 font-size: 2.7rem;
                 font-weight: 600;
+            }
+
+            &.cursor-active {
+                animation: blink .5s step-end infinite;
+                display: inline;
+                border-right: 2px solid white;
+                
             }
         }
         .graphic-rect {

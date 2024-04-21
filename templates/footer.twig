@@ -32,6 +32,28 @@
 						<li>
 							<a href="{{site.link}}/privacy-policy">Privacy Policy</a>
 						</li>
+						
+					</ul>
+				</div>
+				<div class="col3">
+					<ul class="list-unstyled" id="langSwitcherWrapper">
+						<li id="langswitcher">
+							{% if menu %}
+								<ul class="nav d-flex">
+								{% for item in langmenu.get_items %}
+
+									<li class="{{ item.classes | join(' ') }} nav__item 
+									{{ item.lang == locale ? 'order-0' : 'order-1' }}
+									">
+										<a class="nav__link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+										{% include "menu.twig" with {'items': item.children} %}
+									</li>
+							{% endfor %}
+								</ul>
+							{% endif %}
+
+							{# {{ dmp(langmenu.get_items) }} #}
+						</li>
 					</ul>
 				</div>
 			</div>

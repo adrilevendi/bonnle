@@ -128,6 +128,8 @@ class StarterSite extends Timber\Site
         $context['stuff'] = 'I am a value set in your functions.php file';
         $context['notes'] = 'These values are available everytime you call Timber::context();';
         $context['menu'] = new Timber\Menu('menu');
+        $context['langmenu'] = new Timber\Menu('language-menu');
+        $context['locale'] = str_replace('_', '-', get_locale());
         $context['site'] = $this;
         return $context;
     }
@@ -199,14 +201,30 @@ class StarterSite extends Timber\Site
 
     /** This is where you can add your own functions to twig.
      *
-     * @param string $twig get extension.
+     * @param string $var get extension.
+     */
+        public function dmp($mixed = null) {
+          echo '<pre style="-webkit-text-stroke: 0.5px red;border: 1px solid red;z-index: 2;position: relative;font-size: 1.6rem;font-weight: bold;">';
+          var_dump($mixed);
+          echo '</pre>';
+          return null;
+        }
+
+    /**
+     * My custom Twig functionality.
+     *
+     * @param \Twig\Environment $twig
+     * @return \Twig\Environment
      */
     public function add_to_twig($twig)
     {
-        $twig->addExtension(new Twig\Extension\StringLoaderExtension());
-        $twig->addFilter(new Twig\TwigFilter('myfoo', array($this, 'myfoo')));
+        $twig->addFunction( new Timber\Twig_Function( 'dmp',  array( $this, 'dmp' )) );
         return $twig;
     }
+
+    
+
+
 
 }
 

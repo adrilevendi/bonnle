@@ -124,7 +124,7 @@ const initalHeroWord = $('#changeTextHero').text();
 $('.change-hero-text-values').each(function(e) {
 
   if ($(this).text() != initalHeroWord) {
-    textTl.to('#changeTextHero', {duration: 1.3, text: "", ease: "none", delay: 1});
+    textTl.to('#changeTextHero', {duration: 1.3, text: "", ease: "none", delay: 0.2})
 
     textTl.to('#changeTextHero', {duration: 2, text: $(this).text(), ease: "power2.out"});
   }
@@ -132,7 +132,7 @@ $('.change-hero-text-values').each(function(e) {
 });
 textTl.to('#changeTextHero', {duration: 1.3, text: "", ease: "none", delay: 1});
 
-textTl.to('#changeTextHero', {duration: 2, text: initalHeroWord, ease: "none"});
+textTl.to('#changeTextHero', {duration: 2, text: initalHeroWord, ease: "none"}).reverse(0);;
 
 // End Hero text animation
 
