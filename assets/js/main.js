@@ -163,7 +163,8 @@ jQuery(document).ready(function () {
   $(window).scroll(function () {
     console.log("Scrolltop: ", $(this).scrollTop());
     $('.navbar').toggleClass('active', $(this).scrollTop() > 50);
-    $('.navbar').toggleClass('fade', $(this).scrollTop() > 500);
+    $('.navbar').toggleClass('minimize', $(this).scrollTop() > 500);
+    // $('.navbar').toggleClass('fade', $(this).scrollTop() > 500);
 
     if($(this).scrollTop() > 50) {
       $(this).addClass('white');
@@ -174,7 +175,7 @@ jQuery(document).ready(function () {
     }
 
     if($('#menuToggler').scrollTop() > 500) {
-      $('#menuToggler').removeClass('white');
+      // $('#menuToggler').removeClass('white');
 
     }
 
