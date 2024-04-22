@@ -1,5 +1,5 @@
 
-// import barba from '@barba/core';
+import barba from '@barba/core';
 
 
 //Page Transitions
@@ -32,7 +32,7 @@ function pageTransitionOut(container) {
       transformOrigin: 'top left',
       ease: 'power1.out'
     }, 'start')
-    .to(loadingScreen, { duration: .5, scaleY: 1, transformOrigin: 'bottom left'});
+    .to(loadingScreen, { duration: .5, scaleY: 0, transformOrigin: 'bottom left'});
 
     // .call(contentAnimation, [container], 'start')
 }
@@ -68,12 +68,13 @@ function contentAnimation(container) {
 //        leave(data) {
 //         // Not needed with async/await or promises
 //         // const done = this.async();
-//         data.current.container.remove()
+//          pageTransitionIn();
 
-//          pageTransitionIn()
+//         data.current.container.remove();
+
 //         // No more needed as we "await" for pageTransition
 //         // And i we change the transition duration, no need to update the delay…
-//         // await delay(1000)
+//         // await delay(1000);
 
 //         // Not needed with async/await or promises
 //         // done()
@@ -157,7 +158,7 @@ tl.from('.reveal2',{y:60, opacity:0, delay:0.5, duration:0.4, stagger:0.3});
 
 jQuery(document).ready(function () {
 
-  console.log("Scrolltop: ", $("#menuToggler").scrollTop());
+  // console.log("Scrolltop: ", $("#menuToggler").scrollTop());
 
   $(window).scroll(function () {
     console.log("Scrolltop: ", $(this).scrollTop());
