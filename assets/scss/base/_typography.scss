@@ -80,3 +80,37 @@ letter-spacing: 0.1em;
 .black {
   color: $brand-black;
 }
+
+// AVG word width h3 display3
+$avw: 321;
+$avw2: 535;
+.pink-stripe {
+  position: relative;
+  font-weight: 800;
+  &::after {
+    content: "";
+    position: absolute;
+    width: #{$avw * 0.7}px;
+    height: 55px;
+    background: $brand-pink;
+    right: 33px;
+    top: 43px;
+    z-index: -1;
+  }
+
+  &.pink-stripe-two {
+      &::after {
+
+    width: #{$avw2  * 0.8}px;
+    }
+  }
+
+  &.display1 {
+      &::after {
+
+      bottom:0;
+      top: unset;
+      height: 77px;
+    }
+  }
+}

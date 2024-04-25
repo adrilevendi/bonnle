@@ -72,6 +72,8 @@ content: url("../../dist/img/Rectangle-text-bg-pink.svg");
             width: 200px;
             height: 200px;
             object-fit: cover;
+            border: 4px solid $brand-black;
+
         }
 
         @include media-breakpoint-down(md) {
@@ -85,10 +87,10 @@ content: url("../../dist/img/Rectangle-text-bg-pink.svg");
 
             }
 
-            &:first-child {
-                margin-top: 1rem;
-
-            }
+            &:first-of-type {
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
         }
 
         &:last-child {

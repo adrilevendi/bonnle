@@ -4,8 +4,8 @@ import barba from '@barba/core';
 
 //Page Transitions
 // Better to traverse the DOM thenleast possible
-const loadingScreen = document.querySelector('.loading-screen')
-const mainNavigation = document.querySelector('.main-navigation')
+const loadingScreen = document.querySelector('.loading-screen');
+const mainNavigation = document.querySelector('.main-navigation');
 
 // Function to add and remove the page transition screen
 function pageTransitionIn() {
@@ -117,23 +117,25 @@ gsap.registerPlugin(TextPlugin);
 
 // Hero text animation
 
-var textTl = gsap.timeline({defaults: {progress: 43}}).repeat(-1);
+var textTl = gsap.timeline({ delay: 2});
 
 const initalHeroWord = $('#changeTextHero').text();
 
+// let sentences = [];
+// $('.change-hero-text-values').each(function(e) {
 
-$('.change-hero-text-values').each(function(e) {
+//   sentences[] = $(this).text();
 
-  if ($(this).text() != initalHeroWord) {
-    textTl.to('#changeTextHero', {duration: 1.3, text: "", ease: "none", delay: 0.2})
+// });
 
-    textTl.to('#changeTextHero', {duration: 2, text: $(this).text(), ease: "power2.out"});
-  }
+//  textTl.to('#changeTextHero', {duration: 1.3, text: "", ease: "none", delay: 0.2})
 
-});
-textTl.to('#changeTextHero', {duration: 1.3, text: "", ease: "none", delay: 1});
+//     textTl.to('#changeTextHero', {duration: 2, text: $(this).text(), ease: "none"});
 
-textTl.to('#changeTextHero', {duration: 2, text: initalHeroWord, ease: "none"}).reverse(0);;
+const reverseTween = gsap.to('#changeTextHero', {duration: 2, text: "We Develop", ease: "none"}).reverse(0);
+
+textTl.add(reverseTween);
+textTl.to('#changeTextHero', {duration: 1, text: "We design", ease: "none"});
 
 // End Hero text animation
 
@@ -154,6 +156,8 @@ var tl = gsap.timeline();
 // }, 'start')
 // .to(loadingScreen, { duration: .5, scaleY: 1, transformOrigin: 'bottom left'});
 tl.from('#projectTitle',{x:-160, delay:0.2, opacity:0.3, duration:1.2, stagger:0.2});
+tl.to('#projectTitle',{x:2060, delay:0.2, opacity:0.3, duration:1.2, stagger:0.2});
+
 tl.from('.reveal2',{y:60, opacity:0, delay:0.5, duration:0.4, stagger:0.3});
 
 jQuery(document).ready(function () {
@@ -164,6 +168,7 @@ jQuery(document).ready(function () {
     console.log("Scrolltop: ", $(this).scrollTop());
     $('.navbar').toggleClass('active', $(this).scrollTop() > 50);
     $('.navbar').toggleClass('minimize', $(this).scrollTop() > 500);
+    $('#menuToggler').toggleClass('white', $(this).scrollTop() > 50);
     // $('.navbar').toggleClass('fade', $(this).scrollTop() > 500);
 
     if($(this).scrollTop() > 50) {
@@ -175,6 +180,9 @@ jQuery(document).ready(function () {
     }
 
     if($('#menuToggler').scrollTop() > 500) {
+      // $('#menuToggler').addClass('white');
+
+    } else {
       // $('#menuToggler').removeClass('white');
 
     }

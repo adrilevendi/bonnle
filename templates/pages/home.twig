@@ -10,6 +10,7 @@
 {% set q = hero.side %}
 {% set s1 = h.section_1 %}
 {% set s2 = h.section_2 %}
+{% set s3 = h.section_3 %}
 {# {{ dmp(q) }} #}
 	<div id="scrollContent">
 		<section id="hero" class="slide-item">
@@ -114,6 +115,36 @@
 						<p class="mt-5 pt-5 p px-md-5 text-center text-md-left">
 							{{s2.text}}</p>
 					</div>
+				</div>
+				{# <img id="developRectDots" src="{{site.theme.link}}/dist/img/rect-dots-pink.svg"> #}
+			</div>
+		</section>
+
+		<div class="mb-md-5 pb-md-5"></div>
+		<div class="mb-md-5 pb-md-5"></div>
+
+		<section id="smm" class="slide-item">
+			<div class="container-fluid mt-5">
+
+				<div class="row ">
+				<div class="col-md-6">
+						<h3 class="display1 pink-stripe pink-stripe-two" >{{s3.title ? s3.title : 'digital strategy'}}</h3>
+
+						<p class="mt-5 pt-5 p px-md-5 text-center text-md-left">
+							{{s3.text ? s3.text : 'We build your company’s presence on social media by identifying effective and interesting content and the social media platforms best placed to allow the brand to interact with users on a daily basis and respond to their needs.'}}</p>
+					</div>
+					<div class="col-md-6">
+						<div id="smmGraphic">
+							<div id="smmGraphicCircle"></div>
+							<div id="smmImage">
+							<img src="{{site.theme.link}}/dist/img/ig-posts.png" class="img-fluid">
+								
+							</div>
+						</div>
+							
+					</div>
+
+					
 				</div>
 				{# <img id="developRectDots" src="{{site.theme.link}}/dist/img/rect-dots-pink.svg"> #}
 			</div>

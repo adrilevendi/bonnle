@@ -16,10 +16,19 @@
 			<div class="col-md-6 offset-md-3 mt-5 py-5">
                 <div id="shape" class="reveal2 bg-{{ c.shape_color }}"></div>
 				<img src="{{ c.image.url ? c.image.url : site.theme.link ~ '/dist/img/black-white-girl-square.jpg'}}" class="img-fluid reveal2" alt="xarmed-web-design-project">
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 mt-5 py-md-5">
+				<img src="{{ c.image1.url ? c.image1.url : site.theme.link ~ '/dist/img/black-white-girl-square.jpg'}}" class="img-fluid reveal2" alt="xarmed-web-design-project-gun">
+			</div>
+
+			<div class="col-md-6">
 				<p class="p mt-5 py-md-5 reveal2 description">
 				{{c.text}}
                 </p>
-				<p class="p mt-5 py-md-5 reveal2">
+				<p class="p  reveal2">
 				{% if c.cta %}
 				<a href="{{c.cta.link}}" class="btn btn-primary">Go to project</a>
 				{% endif %}
