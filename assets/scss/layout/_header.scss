@@ -210,7 +210,10 @@ header {
 			display: block;
 			width: 35px;
 			height: 1px;
-			background: $brand-black;
+			background: white;
+			@include media-breakpoint-up(sm) {
+				background: $brand-black;
+			}
 			
 
 			&:last-child {

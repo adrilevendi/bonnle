@@ -288,10 +288,14 @@
             &__image {
                 overflow: hidden;
                 border: rem(3) solid $brand-black;
+
                 img {
                     transition: .7s ease-in-out;
                     max-width: 100%;
                     height: rem(450);
+                    width: 300px;
+                    object-fit: cover;
+
                     @include media-breakpoint-up(md) {
                         height: rem(637);
                     }
@@ -431,6 +435,8 @@
     #smm {
 
         &Image {
+
+                @include media-breakpoint-up(sm) {
             position:relative;
             border-radius:50%;
             background: #eaeaea;
@@ -455,6 +461,13 @@
                 width: 585px;
                 height: 585px;
             }
+        }
+
+            h3 {
+                @include media-breakpoint-down(sm) {
+                    line-height: unset;
+                }
+            }
 
         
 
@@ -471,6 +484,17 @@
             }
         }
         .btn-smart{
+
+            &__wrapper {
+                @include media-breakpoint-up(sm) {
+                display: flex;
+                justify-content: space-evenly;
+                max-width: 590px;
+    margin: auto;
+
+                }
+                            }
+
             display: flex;
             position: relative;
             height: 150px;
@@ -479,13 +503,18 @@
             align-items: center;
             margin: auto;
 
+                @include media-breakpoint-up(sm) {
+                    margin: 0;
+                }
+
             &__link {
+
                 display: contents;
                 text-decoration: none;
             }
 
             &__rect{
-          
+                // pointer-events: none;
                 position: absolute;
                 height: 50px;
                 width: 250px;
@@ -497,8 +526,5 @@
                   letter-spacing: 2px;
               }
           }
-          
-          
-          
     }
 }
