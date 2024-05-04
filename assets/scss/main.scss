@@ -10,15 +10,19 @@
 // BASE
 @import 'base/colors';
 @import 'base/typography';
+
+// COMPONENTS
+@import 'components/buttons';
+
 // LAYOUT
 @import 'layout/header';
 @import 'layout/footer';
+@import 'layout/archive';
 
 //GENERAL
 @import '_general';
 
-// COMPONENTS
-@import 'components/buttons';
+
 
 // PAGES
 //@import "pages/_homepage.scss";

@@ -1,0 +1,10 @@
+
+{% extends "index.twig" %}
+
+
+{% block body_class %}blog{% endblock %}
+{% block content %}
+	{# {{ dmp(posts) }} #}
+	<h2 class="display1 pink-stripe col-5 mb-5">Blog</h2>
+  {{ parent() }}
+{% endblock %}

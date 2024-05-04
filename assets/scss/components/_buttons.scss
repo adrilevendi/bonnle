@@ -1,4 +1,4 @@
-.btn{
+@mixin btn {
   text-transform: uppercase;
   color: $white;
   border-radius: 0;
@@ -13,9 +13,19 @@
   }
 }
 
-.btn-primary {
+@mixin btn-primary {
   color: white !important;
+
 }
+
+.btn{
+  @include btn;
+}
+
+.btn-primary {
+  @include btn-primary;
+}
+
 a.btn {
   color: $white;
 }

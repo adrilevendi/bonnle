@@ -3,7 +3,9 @@
 
 {% extends "index.twig" %}
 
+
+{% block body_class %}blog{% endblock %}
 {% block content %}
-  <h3>This is my archive</h3>
+	<h2 class="display1 pink-stripe col-5 mb-5">{{ term.title }}</h2>
   {{ parent() }}
 {% endblock %}

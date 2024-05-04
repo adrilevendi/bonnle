@@ -1,116 +1,15 @@
 
 import barba from '@barba/core';
+import PageTransitions from './modules/pageTransitions.js';
 
-
-//Page Transitions
-// Better to traverse the DOM thenleast possible
-const loadingScreen = document.querySelector('.loading-screen');
-const mainNavigation = document.querySelector('.main-navigation');
-
-// Function to add and remove the page transition screen
-function pageTransitionIn() {
-  // GSAP methods can be chained and return directly a promise
-  // but here, a simple tween is enough
-  return gsap
-    // .timeline()
-    // .set(loadingScreen, { transformOrigin: 'bottom left'})
-    // .to(loadingScreen, { duration: .5, scaleY: 1 })
-    .to(loadingScreen, { duration: .5, scaleY: 1, transformOrigin: 'bottom left'});
-
-    
-}
-// Function to add and remove the page transition screen
-function pageTransitionOut(container) {
-  // GSAP methods can be chained and return directly a promise
-  return gsap
-    .timeline({ delay: 1 }) // More readable to put it here
-    .add('start') // Use a label to sync screen and content animation
-    .to(loadingScreen, {
-      duration: 0.5,
-      scaleY: 0,
-      skewX: 0,
-      transformOrigin: 'top left',
-      ease: 'power1.out'
-    }, 'start')
-    .to(loadingScreen, { duration: .5, scaleY: 0, transformOrigin: 'bottom left'});
-
-    // .call(contentAnimation, [container], 'start')
+function dmp(argument) {
+  return console.log(argument)
 }
 
-// Function to animate the content of each page
-function contentAnimation(container) {
-
-  // Query from container
-  $(container.querySelector('.green-heading-bg')).addClass('show')
-  // GSAP methods can be chained and return directly a promise
-  return gsap
-    .timeline()
-    .from(container.querySelector('.is-animated'), {
-      duration: 0.5,
-      translateY: 10,
-      opacity: 0,
-      stagger: 0.4
-    })
-    // .from(mainNavigation, { duration: .5, translateY: -10, opacity: 0})
-}
-
-// $(function() {
-//   barba.init({
-//     // We don't want "synced transition"
-//     // because both content are not visible at the same time
-//     // and we don't need next content is available to start the page transition
-//     // sync: true,
-//     transitions: [{
-//       // NB: `data` was not used.
-//       // But usually, it's safer (and more efficient)
-//       // to pass the right container as a paramater to the function
-//       // and get DOM elements directly from it
-//        leave(data) {
-//         // Not needed with async/await or promises
-//         // const done = this.async();
-//          pageTransitionIn();
-
-//         data.current.container.remove();
-
-//         // No more needed as we "await" for pageTransition
-//         // And i we change the transition duration, no need to update the delay…
-//         // await delay(1000);
-
-//         // Not needed with async/await or promises
-//         // done()
-
-//         // Loading screen is hiding everything, time to remove old content!
-//         const regex = new RegExp('/\/$/', 'gi');
-//         let page = data.next.url.path.replace(/\/$/, '');
-//         page = page.substr(1, page.length);
-//         if (page === '') page = 'home';
-//         $('body').removeClass(function (index, className) {
-//           return (className.match(/(^|\s)page-\S+/g) || []).join(' ');
-//         }).addClass('page-' + page);
-      
-//       },
-
-//        enter(data) {
-//          pageTransitionOut(data.next.container)
-//       },
-//       // Variations for didactical purpose…
-//       // Better browser support than async/await
-//       // enter({ next }) {
-//       //   return pageTransitionOut(next.container);
-//       // },
-//       // More concise way
-//       // enter: ({ next }) => pageTransitionOut(next.container),
-
-//        once(data) {
-//          contentAnimation(data.next.container);
-//       }
-//     }]
-//   });
-
-// });
+const page_transitions = new PageTransitions();
+// page_transitions.init();
 
 
-//EndPage Transitions
 
 gsap.registerPlugin(TextPlugin);
 
@@ -121,21 +20,35 @@ var textTl = gsap.timeline({ delay: 2});
 
 const initalHeroWord = $('#changeTextHero').text();
 
-// let sentences = [];
-// $('.change-hero-text-values').each(function(e) {
+let sentences = [];
+$('.change-hero-text-values').each(function(e) {
 
-//   sentences[] = $(this).text();
+  sentences.push($(this).text());
 
-// });
+});
 
 //  textTl.to('#changeTextHero', {duration: 1.3, text: "", ease: "none", delay: 0.2})
 
 //     textTl.to('#changeTextHero', {duration: 2, text: $(this).text(), ease: "none"});
 
-const reverseTween = gsap.to('#changeTextHero', {duration: 2, text: "We Develop", ease: "none"}).reverse(0);
+function createTypewritingAnimation(sentences) {
 
-textTl.add(reverseTween);
-textTl.to('#changeTextHero', {duration: 1, text: "We design", ease: "none"});
+  for (var i = sentences.length - 0; i > 0; i++) {
+    if((i % 2) == 0) {
+  textTl.to('#changeTextHero', {duration: 1, text: sentences[i], ease: "none"});
+
+    } else {
+    
+      const reverseTween = gsap.to('#changeTextHero', {duration: 2, text: sentences[i], ease: "none"}).reverse(0);
+  textTl.add(reverseTween);
+
+    }
+  }
+
+}
+
+dmp(sentences.length);
+// createTypewritingAnimation(sentences);
 
 // End Hero text animation
 
@@ -264,7 +177,9 @@ jQuery(document).ready(function () {
 
   $('.btn-smart').mouseenter(function (e) {
     TweenMax.to(this, 0.3, { height: 200, width: 250 });
-    TweenMax.to('.btn-smart__rect', 0.3, { scaleY: 1.03 });
+    TweenMax.to($(e.target).find('.btn-smart__rect'), 0.3, { scaleY: 1.03 });
+    console.log($(e.target).find('.btn-smart__rect'));
+
   });
 
   $('.btn-smart').mousemove(function (e) {
@@ -277,11 +192,11 @@ jQuery(document).ready(function () {
   }
 
   function parallaxIt(e, target, parent, movement) {
-    var $this = $(parent);
+    var $this = $(e.target);
     var relX = e.pageX - $this.offset().left;
     var relY = e.pageY - $this.offset().top;
-
-    TweenMax.to(target, 0.3, {
+    var rect = $this.find('.btn-smart__rect');
+    TweenMax.to(rect, 0.3, {
       x: (relX - $this.width() / 2) / $this.width() * movement,
       y: (relY - $this.height() / 2) / $this.height() * movement,
       ease: Power2.easeOut
@@ -320,7 +235,8 @@ jQuery(document).ready(function () {
 
   $('#menuToggler').click(function () {
     $('#sideMenu').toggleClass('active');
-    $(this).toggleClass('active');
+    $(this).toggleClass('active');  
+    $('body').toggleClass('overflow-hidden');
     if($('.navbar').hasClass('active')) {
       $('.navbar').removeClass('active');
       $('#menuToggler').removeClass('white');
