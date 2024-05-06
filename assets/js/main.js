@@ -8,6 +8,7 @@ function dmp(argument) {
 
 const page_transitions = new PageTransitions();
 // page_transitions.init();
+setTimeout(() => {$('#preloader').fadeOut()}, 2500);
 
 
 
@@ -16,7 +17,7 @@ gsap.registerPlugin(TextPlugin);
 
 // Hero text animation
 
-var textTl = gsap.timeline({ delay: 2});
+var textTl = gsap.timeline({ delay: 4});
 
 const initalHeroWord = $('#changeTextHero').text();
 
@@ -27,9 +28,23 @@ $('.change-hero-text-values').each(function(e) {
 
 });
 
+
+
+// let sentences = [];
+// $('.change-hero-text-values').each(function(e) {
+
+//   sentences[] = $(this).text();
+
+// });
+
 //  textTl.to('#changeTextHero', {duration: 1.3, text: "", ease: "none", delay: 0.2})
 
 //     textTl.to('#changeTextHero', {duration: 2, text: $(this).text(), ease: "none"});
+
+const reverseTween = gsap.to('#changeTextHero', {duration: 2, text: "We Develop", ease: "none"}).reverse(0);
+
+textTl.add(reverseTween);
+textTl.to('#changeTextHero', {duration: 1, text: "We design", ease: "none"});
 
 function createTypewritingAnimation(sentences) {
 
@@ -47,7 +62,7 @@ function createTypewritingAnimation(sentences) {
 
 }
 
-dmp(sentences.length);
+// dmp(sentences.length);
 // createTypewritingAnimation(sentences);
 
 // End Hero text animation

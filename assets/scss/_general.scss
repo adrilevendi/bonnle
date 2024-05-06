@@ -90,3 +90,91 @@ body {
 background: #bfbfbf;
     border-radius: 10px;
 }
+
+
+
+#preloader {
+  position: fixed;
+  background: black;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  flex-direction: column;
+  //display: none;
+
+
+  svg {
+    margin-bottom: 2rem;
+    max-width: 100px;
+        overflow: visible;
+
+    #pinkDotPath {
+      // animation: spin 1s infinite linear;
+      transform-origin: -50px
+    }
+  }
+
+  .logo-wrapper {
+    position: relative;
+  }
+
+  .fillbar {
+    width: 0%;
+    border: 1px solid $brand-pink;
+    height: 3px;
+    background: $brand-pink;
+    // bottom:  49px;
+    left: 39px;
+    animation: fillbar-fill 2s ease-in-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
+    &-wrapper{
+      position:relative;
+    width: 60%;
+
+    }
+  }
+
+  .spinner {
+    width: 80px;
+    height: 80px;
+
+    border: 2px solid #f3f3f3;
+    border-top: 3px solid black;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fillbar-fill {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+
+}

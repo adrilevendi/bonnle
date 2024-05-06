@@ -1,5 +1,7 @@
 {# {% set options  = %} #}
 {# {{ dump(options) }} #}
+{# {{ dmp(langmenu) }} #}
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-3 border-col py-md-4">
@@ -39,9 +41,11 @@
 				<div class="col-5 col-md-3">
 					<ul class="list-unstyled" id="langSwitcherWrapper">
 						<li id="langswitcher">
-							{% if menu %}
+							{% if langmenu %}
 								<ul class="nav d-flex">
 								{% for item in langmenu.get_items %}
+{# {{ dmp(item) }} #}
+
 
 									<li class="{{ item.classes | join(' ') }} nav__item 
 									{{ item.lang == locale ? 'order-0' : 'order-1' }}

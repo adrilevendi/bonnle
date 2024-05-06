@@ -128,8 +128,10 @@ class StarterSite extends Timber\Site
         $context['stuff'] = 'I am a value set in your functions.php file';
         $context['notes'] = 'These values are available everytime you call Timber::context();';
         $context['menu'] = new Timber\Menu('menu');
-        $context['langmenu'] = new Timber\Menu('language-menu');
         $context['locale'] = str_replace('_', '-', get_locale());
+        $context['user'] = new Timber\User();
+        $context['langmenu'] = pll_the_languages( array( 'dropdown' => 1, 'hide_current' => 1, 'raw' => 1 ) );
+
         $context['site'] = $this;
         return $context;
     }
@@ -204,10 +206,25 @@ class StarterSite extends Timber\Site
      * @param string $var get extension.
      */
         public function dmp($mixed = null) {
-          echo '<pre style="-webkit-text-stroke: 0.5px red;border: 1px solid red;z-index: 2;position: relative;font-size: 1.6rem;font-weight: bold;">';
+          echo '
+          <div style=" top: 8rem;
+    left: 2rem;
+    z-index: 2; background:white;   ">
+          <pre style="-webkit-text-stroke: 0.5px red;border: 1px solid red;
+    font-size: 1.6rem;
+    font-weight: bold;
+    min-width: 30vw;
+   
+    overflow: scroll;
+  ">';
           var_dump($mixed);
-          echo '</pre>';
+          echo '</pre></div>';
           return null;
+        }
+
+
+        public function getMinsRead($content) {
+          return round(count(explode(' ', $content)) / 200);
         }
 
     /**
@@ -219,8 +236,14 @@ class StarterSite extends Timber\Site
     public function add_to_twig($twig)
     {
         $twig->addFunction( new Timber\Twig_Function( 'dmp',  array( $this, 'dmp' )) );
+        $twig->addFunction( new Timber\Twig_Function( 'getMinsRead',  array( $this, 'getMinsRead' )) );
         return $twig;
     }
+
+
+
+
+
 
     
 

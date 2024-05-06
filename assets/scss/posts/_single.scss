@@ -1,0 +1,10 @@
+.post-type-post {
+	
+	@include media-breakpoint-down(sm) {
+		// padding-top: 2rem;
+	}
+
+	a {
+		color: $brand-pink;
+	}
+}
