@@ -130,7 +130,8 @@ class StarterSite extends Timber\Site
         $context['menu'] = new Timber\Menu('menu');
         $context['locale'] = str_replace('_', '-', get_locale());
         $context['user'] = new Timber\User();
-        $context['langmenu'] = pll_the_languages( array( 'dropdown' => 1, 'hide_current' => 1, 'raw' => 1 ) );
+        // $context['langmenu'] = pll_the_languages( array( 'dropdown' => 1, 'hide_current' => 1, 'raw' => 1 ) );
+        $context['langmenu'] = new Timber\Menu('language-menu');
 
         $context['site'] = $this;
         return $context;
