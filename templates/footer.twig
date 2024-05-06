@@ -51,7 +51,7 @@
 									{{ item.lang == locale ? 'order-0' : 'order-1' }}
 									">
 										<a class="nav__link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-										{% include "menu.twig" with {'items': item.children} %}
+										{# {% include "menu.twig" with {'items': item.children} %} #}
 									</li>
 							{% endfor %}
 								</ul>
