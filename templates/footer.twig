@@ -6,13 +6,15 @@
 	<div class="row">
 		<div class="col-md-3 border-col py-md-4">
 			<img src="{{site.theme.link}}/dist/img/bonnle-logo-light.svg" alt="bonnle-logo">
-			<p class="mt-3 pt-3">Komuna e Parisit<br> Rr. Medar Shtylla Nr.13<br> Tiranë, Albania</p>
 			<p class="mt-3 pt-3">
 				<a href="tel:+355694031716">+355 69 40 31 716</a>
 			</p>
 			<p class="mt-3 pt-3">
 				<a href="mailto:hello@bonnle.al">hello@bonnle.al</a>
 			</p>
+			<p class="mt-3 pt-3">Komuna e Parisit<br> Rr. Medar Shtylla Nr.13<br> Tiranë, Albania</p>
+			<p class="mt-3 pt-3">NIPT: M41716029V</p>
+
 		</div>
 
 		<div class="col-md-9 py-md-4  mt-md-3">
@@ -50,7 +52,7 @@
 									<li class="{{ item.classes | join(' ') }} nav__item 
 									{{ item.lang == locale ? 'order-0' : 'order-1' }}
 									">
-										<a class="nav__link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+										<a class="nav__link" target="{{ item.target }}" href="{{ item.lang == locale ? '#' : item.link }}">{{ item.title }}</a>
 										{# {% include "menu.twig" with {'items': item.children} %} #}
 									</li>
 							{% endfor %}
