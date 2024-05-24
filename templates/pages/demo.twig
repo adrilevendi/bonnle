@@ -5,13 +5,15 @@
 
 {% block content %}
 {% set d = post.get_field('demo') %}
-
+<div class="pt-5"></div>
 <iframe src="{{d.link}}" frameborder="0" noresize="noresize" data-view="fullScreenPreview" allow="geolocation 'self'; autoplay 'self'" sandbox="allow-forms allow-scripts allow-same-origin"></iframe>
 {% endblock %}
 
 {% block scripts %}
 <script type="text/javascript">
 	document.getElementsByTagName("body")[0].style.overflow = "hidden";
+	document.getElementsByTagName("iframe")[0].style.margin = "65px 0 0 0";
+	document.getElementById("footer").display = "none";
 	console.log('bofy hidden');
 </script>
 {% endblock %}
