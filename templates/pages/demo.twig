@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block body_class %}demo
+{% endblock %}
+
+{% block content %}
+{% set d = post.get_field('demo') %}
+
+<iframe src="{{d.link}}" frameborder="0" noresize="noresize" data-view="fullScreenPreview" allow="geolocation 'self'; autoplay 'self'" sandbox="allow-forms allow-scripts allow-same-origin"></iframe>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
