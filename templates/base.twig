@@ -1,7 +1,9 @@
 {% block html_head_container %}
 
 	{% include 'html-header.twig' %}
-	{% block head %}{% endblock %}
+	{% block head %}
+
+	{% endblock %}
     </head>
 {% endblock %}
 <body class="page-{% block body_class %}{% endblock %}" data-template="base.twig">
@@ -74,8 +76,8 @@
 <script src="{{ site.theme.link }}/dist/js/index.min.js">
 </script>
 
-{# {% block scripts %}
+{% block scripts %}
 
-{% endblock %} #}
+{% endblock %}
 </body>
 </html>
