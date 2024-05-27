@@ -76,6 +76,18 @@
 <script src="{{ site.theme.link }}/dist/js/index.min.js">
 </script>
 
+{% if options.gtag %}
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{options.gtag}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{options.gtag}}');
+</script>
+{% endif %}
+
 {% block scripts %}
 
 {% endblock %}
