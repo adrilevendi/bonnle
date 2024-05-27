@@ -25,7 +25,7 @@
 	<div class="wrapper">
 		<ul>
 			{% if menu %}
-				{% for item in items %}
+				{% for item in menu.items %}
 					<li class="{{ item.classes | join(' ') }} nav__item">
 						<a class="nav__link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
 					</li>
