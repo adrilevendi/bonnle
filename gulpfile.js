@@ -14,7 +14,7 @@ const webpack = require('webpack-stream');
 const newer = require('gulp-newer');
 const tinypng = require('gulp-tinypng-compress');
 const sourcemaps = require('gulp-sourcemaps');
-
+const gulpAvif = require('gulp-avif');
 // BrowserSync
 function browserSync(done) {
     browsersync.init({
@@ -49,6 +49,7 @@ function style() {
             outputStyle: 'nested'
         }).on('error', sass.logError))
         .pipe(autoprefixer('last 2 versions'))
+        // .pipe(rename("main.min.css"))
         .pipe(sourcemaps.write('./'))
         .pipe(dest("./dist/css"))
         .pipe(browsersync.stream());
@@ -57,7 +58,8 @@ function style() {
 // images
 function images() {
     return src('./assets/images/**/*.{png,jpg,jpeg}')
-        .pipe(newer('./dist/img'))
+        // .pipe(newer('./dist/img'))
+        .pipe(gulpAvif())
         // .pipe(tinypng({
         //     key: 'LoNi0JXMlZmcc7Tl8rVzmQenFAmkEjIH',
         //     sigFile: 'images/.tinypng-sigs',
@@ -65,6 +67,8 @@ function images() {
         //     log: true
         // }))
         .pipe(dest('./dist/img'))
+
+
 }
 
 
@@ -143,7 +147,7 @@ function watchFiles() {
     watch("./assets/images/vectors/*.svg", svg);
     watch("./assets/js/**/*.js", js);
     src('./assets/js/**/*.js')
-        .pipe(notify('Gulp is watching'));
+        // .pipe(notify('Gulp is watching'));
 }
 
 exports.js = js;
