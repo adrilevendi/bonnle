@@ -1,14 +1,14 @@
 
-import barba from '@barba/core';
-import PageTransitions from './modules/pageTransitions.js';
+// import barba from '@barba/core';
+// import PageTransitions from './modules/pageTransitions.js';
 
 function dmp(argument) {
   return console.log(argument)
 }
 
-const page_transitions = new PageTransitions();
+// const page_transitions = new PageTransitions();
 // page_transitions.init();
-setTimeout(() => {$('#preloader').fadeOut()}, 2500);
+setTimeout(() => { $('#preloader').fadeOut() }, 2500);
 
 
 
@@ -17,12 +17,12 @@ gsap.registerPlugin(TextPlugin);
 
 // Hero text animation
 
-var textTl = gsap.timeline({ delay: 4});
+var textTl = gsap.timeline({ delay: 4 });
 
 const initalHeroWord = $('#changeTextHero').text();
 
 let sentences = [];
-$('.change-hero-text-values').each(function(e) {
+$('.change-hero-text-values').each(function (e) {
 
   sentences.push($(this).text());
 
@@ -41,21 +41,21 @@ $('.change-hero-text-values').each(function(e) {
 
 //     textTl.to('#changeTextHero', {duration: 2, text: $(this).text(), ease: "none"});
 
-const reverseTween = gsap.to('#changeTextHero', {duration: 2, text: "We Develop", ease: "none"}).reverse(0);
+const reverseTween = gsap.to('#changeTextHero', { duration: 2, text: "We Develop", ease: "none" }).reverse(0);
 
 textTl.add(reverseTween);
-textTl.to('#changeTextHero', {duration: 1, text: "We design", ease: "none"});
+textTl.to('#changeTextHero', { duration: 1, text: "We design", ease: "none" });
 
 function createTypewritingAnimation(sentences) {
 
   for (var i = sentences.length - 0; i > 0; i++) {
-    if((i % 2) == 0) {
-  textTl.to('#changeTextHero', {duration: 1, text: sentences[i], ease: "none"});
+    if ((i % 2) == 0) {
+      textTl.to('#changeTextHero', { duration: 1, text: sentences[i], ease: "none" });
 
     } else {
-    
-      const reverseTween = gsap.to('#changeTextHero', {duration: 2, text: sentences[i], ease: "none"}).reverse(0);
-  textTl.add(reverseTween);
+
+      const reverseTween = gsap.to('#changeTextHero', { duration: 2, text: sentences[i], ease: "none" }).reverse(0);
+      textTl.add(reverseTween);
 
     }
   }
@@ -69,7 +69,7 @@ function createTypewritingAnimation(sentences) {
 
 
 
-gsap.from('.reveal',{y:60, opacity:0, delay:0.1, duration:0.4, stagger:0.2});
+gsap.from('.reveal', { y: 60, opacity: 0, delay: 0.1, duration: 0.4, stagger: 0.2 });
 
 var tl = gsap.timeline();
 // gsap
@@ -83,10 +83,10 @@ var tl = gsap.timeline();
 //   ease: 'power1.out'
 // }, 'start')
 // .to(loadingScreen, { duration: .5, scaleY: 1, transformOrigin: 'bottom left'});
-tl.from('#projectTitle',{x:-160, delay:0.2, opacity:0.3, duration:1.2, stagger:0.2});
-tl.to('#projectTitle',{x:2060, delay:0.2, opacity:0.3, duration:1.2, stagger:0.2});
+tl.from('#projectTitle', { x: -160, delay: 0.2, opacity: 0.3, duration: 1.2, stagger: 0.2 });
+tl.to('#projectTitle', { x: 2060, delay: 0.2, opacity: 0.3, duration: 1.2, stagger: 0.2 });
 
-tl.from('.reveal2',{y:60, opacity:0, delay:0.5, duration:0.4, stagger:0.3});
+tl.from('.reveal2', { y: 60, opacity: 0, delay: 0.5, duration: 0.4, stagger: 0.3 });
 
 jQuery(document).ready(function () {
 
@@ -99,7 +99,7 @@ jQuery(document).ready(function () {
     $('#menuToggler').toggleClass('white', $(this).scrollTop() > 50);
     // $('.navbar').toggleClass('fade', $(this).scrollTop() > 500);
 
-    if($(this).scrollTop() > 50) {
+    if ($(this).scrollTop() > 50) {
       $(this).addClass('white');
 
 
@@ -107,7 +107,7 @@ jQuery(document).ready(function () {
       $('#headerLogo').removeClass('white');
     }
 
-    if($('#menuToggler').scrollTop() > 500) {
+    if ($('#menuToggler').scrollTop() > 500) {
       // $('#menuToggler').addClass('white');
 
     } else {
@@ -117,13 +117,13 @@ jQuery(document).ready(function () {
 
     if ($('.page-projekt').length) {
       // $('#headerLogo').toggleClass('white', $(this).scrollTop() > 50);
-      
+
     }
-   
+
 
 
   });
-  
+
 
   $('#sideMenu li').click(() => {
     $('#sideMenu').removeClass('active');
@@ -250,9 +250,9 @@ jQuery(document).ready(function () {
 
   $('#menuToggler').click(function () {
     $('#sideMenu').toggleClass('active');
-    $(this).toggleClass('active');  
+    $(this).toggleClass('active');
     $('body').toggleClass('overflow-hidden');
-    if($('.navbar').hasClass('active')) {
+    if ($('.navbar').hasClass('active')) {
       $('.navbar').removeClass('active');
       $('#menuToggler').removeClass('white');
       $('#headerLogo').removeClass('white');
@@ -268,11 +268,11 @@ jQuery(document).ready(function () {
         // x: 200,
         y: 190,
         duration: 0.4,
-        stagger:0.1,
+        stagger: 0.1,
         delay: 0.6,
         ease: Power2.Out,
       });
-     
+
     }
 
 

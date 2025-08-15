@@ -20,6 +20,7 @@
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
+    "gulp-avif": "^1.1.1",
     "gulp-babel": "^8.0.0",
     "gulp-cli": "^2.2.0",
     "gulp-newer": "^1.4.0",

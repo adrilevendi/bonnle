@@ -434,6 +434,12 @@
 
     #smm {
 
+        &Graphic {
+            display: flex;
+            justify-content: center;
+
+        }
+        
         &Image {
 
                 @include media-breakpoint-up(sm) {

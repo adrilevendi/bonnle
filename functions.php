@@ -129,6 +129,7 @@ class StarterSite extends Timber\Site
         $context['notes'] = 'These values are available everytime you call Timber::context();';
         $context['menu'] = new Timber\Menu('primary-menu');
         $context['locale'] = str_replace('_', '-', get_locale());
+        $context['locale2'] = substr(get_locale(), 0, '2', );
         $context['user'] = new Timber\User();
         // $context['langmenu'] = pll_the_languages( array( 'dropdown' => 1, 'hide_current' => 1, 'raw' => 1 ) );
         $context['langmenu'] = new Timber\Menu('language-menu');
@@ -229,6 +230,11 @@ class StarterSite extends Timber\Site
           return round(count(explode(' ', $content)) / 200);
         }
 
+        public function getCurrLang($content) {
+            return get_locale();
+          }
+
+
     /**
      * My custom Twig functionality.
      *
@@ -239,6 +245,7 @@ class StarterSite extends Timber\Site
     {
         $twig->addFunction( new Timber\Twig_Function( 'dmp',  array( $this, 'dmp' )) );
         $twig->addFunction( new Timber\Twig_Function( 'getMinsRead',  array( $this, 'getMinsRead' )) );
+        $twig->addFunction( new Timber\Twig_Function( 'getCurrLang',  array( $this, 'getCurrLang' )) );
         return $twig;
     }
 
