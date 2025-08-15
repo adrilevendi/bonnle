@@ -133,7 +133,7 @@ class StarterSite extends Timber\Site
         $context['user'] = new Timber\User();
         // $context['langmenu'] = pll_the_languages( array( 'dropdown' => 1, 'hide_current' => 1, 'raw' => 1 ) );
         $context['langmenu'] = new Timber\Menu('language-menu');
-        $context['options'] = get_fields('options');
+        $context['options'] = get_field('options');
 
         $context['site'] = $this;
         return $context;
